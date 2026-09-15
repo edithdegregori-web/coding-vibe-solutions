@@ -1,0 +1,1111 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding Vibe Solutions | Consultoría Digital</title>
+  <meta name="description" content="Coding Vibe Solutions combina diagnóstico estratégico, desarrollo web premium y automatizaciones con IA para negocios en crecimiento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070d16;
+      --bg-soft: #0b1420;
+      --panel: rgba(16, 23, 35, 0.9);
+      --panel-strong: rgba(10, 16, 24, 0.96);
+      --text: #ecf7ff;
+      --muted: #9bb4cc;
+      --line: rgba(156, 168, 196, 0.18);
+      --cyan: #67f3ff;
+      --cyan-strong: #00d8ff;
+      --violet: #8f7bff;
+      --pink: #ff69d8;
+      --green: #8af7b8;
+      --gold: #ffd38a;
+      --shadow: rgba(67, 201, 255, 0.25);
+      --shadow-strong: rgba(143, 123, 255, 0.25);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(103, 243, 255, 0.12), transparent 26%),
+        radial-gradient(circle at top right, rgba(143, 123, 255, 0.16), transparent 26%),
+        linear-gradient(180deg, #050a12 0%, #0a111b 30%, #070d16 100%);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    p { margin: 0; }
+    h1,h2,h3,h4 { font-family: "Syne", sans-serif; letter-spacing: -0.05em; margin: 0; }
+
+    .container {
+      width: min(1160px, calc(100% - 2rem));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(103, 243, 255, 0.35);
+      background: rgba(103, 243, 255, 0.08);
+      color: var(--cyan);
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(103,243,255,.8);
+    }
+    .section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+    .section-head {
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+    .section-head h2 {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      line-height: 0.98;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 13, 22, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      font-size: 1.15rem;
+    }
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.72rem;
+      background: linear-gradient(135deg, rgba(103,243,255,0.22), rgba(143,123,255,0.25));
+      border: 1px solid rgba(103,243,255,0.34);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05), 0 0 18px rgba(103,243,255,0.2);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.92rem;
+    }
+    .brand span { color: var(--cyan); }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+    .nav a {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+    .nav a:hover { color: var(--cyan); }
+    .header-cta {
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(103,243,255,0.08);
+      border: 1px solid rgba(103,243,255,0.35);
+      color: var(--cyan);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .header-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 24px rgba(103,243,255,0.2);
+    }
+
+    .hero {
+      position: relative;
+      padding: 6rem 0 4rem;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      width: 32rem;
+      height: 32rem;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.42;
+      pointer-events: none;
+    }
+    .hero::before {
+      top: -7rem;
+      right: -5rem;
+      background: rgba(103,243,255,0.2);
+    }
+    .hero::after {
+      left: -5rem;
+      bottom: -9rem;
+      background: rgba(143,123,255,0.18);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .hero-copy {
+      max-width: 40rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(103,243,255,0.32);
+      background: rgba(103,243,255,0.07);
+      color: var(--cyan);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+    }
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(103,243,255,0.8);
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 5vw, 5.4rem);
+      line-height: 0.95;
+      margin: 0 0 1.2rem;
+    }
+    .gradient-text {
+      background: linear-gradient(130deg, var(--cyan), #b1dcff 28%, var(--pink) 72%, var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 35rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .button-primary, .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 1rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .button-primary {
+      background: linear-gradient(135deg, var(--cyan), #ccfdff);
+      color: #041923;
+      box-shadow: 0 18px 30px rgba(103,243,255,0.22);
+    }
+    .button-secondary {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+    .button-primary:hover, .button-secondary:hover {
+      transform: translateY(-2px);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.7rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .code-card {
+      position: relative;
+      width: min(100%, 430px);
+      background: rgba(9, 15, 22, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 1.6rem;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.38), 0 0 45px rgba(103,243,255,0.08);
+      transform: rotate(2deg);
+    }
+    .code-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(103,243,255,0.12), transparent 34%, rgba(143,123,255,0.1));
+      pointer-events: none;
+    }
+    .code-topbar {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+    }
+    .traffic { width: 0.7rem; height: 0.7rem; border-radius: 50%; }
+    .traffic:nth-child(1) { background: #ff6b7f; }
+    .traffic:nth-child(2) { background: #ffd166; }
+    .traffic:nth-child(3) { background: #7ae582; }
+    .code-body {
+      position: relative;
+      padding: 1.2rem 1rem 1rem;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: #dfeaf6;
+    }
+    .code-line { display: block; }
+    .token-key { color: var(--cyan); }
+    .token-string { color: #ffbde8; }
+    .token-number { color: #8af7b8; }
+    .token-fn { color: #d0d7ff; }
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 0 1rem 1.15rem;
+      position: relative;
+      z-index: 1;
+    }
+    .mini-stat {
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      text-align: center;
+      padding: 0.9rem 0.6rem;
+    }
+    .mini-stat strong {
+      display: block;
+      font-family: "Syne", sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+    .mini-stat span {
+      color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.015);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.4rem;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(103,243,255,0.34);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.18), 0 0 24px rgba(103,243,255,0.08);
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.9rem;
+      background: linear-gradient(135deg, rgba(103,243,255,0.12), rgba(143,123,255,0.12));
+      border: 1px solid rgba(103,243,255,0.2);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.7rem;
+    }
+    .feature-card p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .services-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.4rem;
+    }
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      padding: 1.7rem 1.4rem 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.015);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(103,243,255,0.34);
+      box-shadow: 0 20px 32px rgba(0,0,0,0.22);
+    }
+    .service-card:nth-child(1) { background: linear-gradient(135deg, rgba(103,243,255,0.12), rgba(10,15,23,0.8)); }
+    .service-card:nth-child(2) { background: linear-gradient(135deg, rgba(143,123,255,0.12), rgba(10,15,23,0.8)); }
+    .service-card:nth-child(3) { background: linear-gradient(135deg, rgba(255,105,216,0.11), rgba(10,15,23,0.8)); }
+    .service-kicker {
+      display: inline-flex;
+      padding: 0.38rem 0.72rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(7,13,22,0.45);
+      border-radius: 999px;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.7rem;
+    }
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+    .service-list {
+      display: grid;
+      gap: 0.6rem;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      color: var(--muted);
+    }
+    .service-list li::before {
+      content: "";
+      width: 0.52rem;
+      height: 0.52rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 10px rgba(103,243,255,0.55);
+      margin-top: 0.48rem;
+      flex-shrink: 0;
+    }
+    .service-pill {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 0.45rem 0.72rem;
+      border: 1px solid var(--line);
+      background: rgba(7,13,22,0.5);
+      border-radius: 999px;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .process-step {
+      position: relative;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.2rem;
+      overflow: hidden;
+    }
+    .process-step::after {
+      content: "";
+      position: absolute;
+      right: -1.2rem;
+      bottom: -1.2rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(103,243,255,0.18), transparent 65%);
+    }
+    .step-number {
+      display: inline-flex;
+      margin-bottom: 0.9rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-weight: 700;
+    }
+    .process-step h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+    }
+    .process-step p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .stats-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(11, 17, 24, 0.72);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 2.2rem 0;
+    }
+    .stat-box {
+      text-align: center;
+    }
+    .stat-box strong {
+      display: block;
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      font-family: "Syne", sans-serif;
+      letter-spacing: -0.06em;
+      margin-bottom: 0.35rem;
+    }
+    .stat-box span {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.68rem;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.35rem;
+      margin-top: 2.5rem;
+    }
+    .showcase-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.015);
+      overflow: hidden;
+    }
+    .showcase-visual {
+      position: relative;
+      height: 22rem;
+      background: linear-gradient(135deg, rgba(103,243,255,0.14), rgba(143,123,255,0.15), rgba(255,105,216,0.12));
+      overflow: hidden;
+    }
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(7px);
+      opacity: 0.75;
+    }
+    .orb-1 { width: 13rem; height: 13rem; background: rgba(103,243,255,0.5); top: 1rem; left: 2rem; }
+    .orb-2 { width: 19rem; height: 19rem; background: rgba(143,123,255,0.34); bottom: -3rem; right: 0; }
+    .placeholder-card {
+      position: absolute;
+      inset: auto 1.2rem 1.2rem 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(7,13,22,0.4);
+      backdrop-filter: blur(12px);
+      color: var(--text);
+      border-radius: 999px;
+      width: fit-content;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .showcase-copy {
+      padding: 1.6rem 1.3rem;
+    }
+    .showcase-copy h3 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .showcase-copy p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+    .bullets {
+      display: grid;
+      gap: 0.8rem;
+    }
+    .bullets li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text);
+    }
+    .bullets li::before {
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      box-shadow: 0 0 14px rgba(138,247,184,0.5);
+      flex-shrink: 0;
+    }
+
+    .cta-wrap {
+      padding: 6.5rem 0 5rem;
+    }
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2rem;
+      border: 1px solid rgba(103,243,255,0.36);
+      background: linear-gradient(135deg, rgba(103,243,255,0.12), rgba(143,123,255,0.1), rgba(255,105,216,0.08));
+      box-shadow: 0 24px 60px rgba(27, 51, 74, 0.18);
+      padding: 3.2rem 1.5rem;
+      text-align: center;
+    }
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(103,243,255,0.18), transparent 67%);
+      left: 50%;
+      top: -8rem;
+      transform: translateX(-50%);
+      filter: blur(18px);
+    }
+    .cta-box > * { position: relative; z-index: 1; }
+    .cta-box h2 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      margin: 0 0 1rem;
+    }
+    .cta-box p {
+      max-width: 42rem;
+      margin: 0 auto 1.7rem;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.75;
+    }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .placeholder-chip {
+      display: inline-flex;
+      margin-top: 1rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(7,13,22,0.35);
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: rgba(7, 13, 22, 0.6);
+      padding: 2rem 0 3rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1.2fr;
+      gap: 1.25rem;
+      padding-bottom: 2rem;
+    }
+    .footer-brand p,
+    .foot-list a,
+    .footer-contact p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .foot-list {
+      display: grid;
+      gap: 0.5rem;
+    }
+    .foot-list a:hover { color: var(--cyan); }
+    .footer-title {
+      color: var(--cyan);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin: 0 0 0.8rem;
+    }
+    .footer-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger { transition-delay: var(--delay, 0s); }
+
+    @media (max-width: 980px) {
+      .feature-grid, .services-wrap, .process-grid, .stats-grid, .footer-grid, .hero-grid, .showcase {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-grid, .showcase { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .services-wrap { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav { display: none; }
+      .site-header .inner { min-height: 68px; }
+      .feature-grid, .services-wrap, .process-grid, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 4.6rem; }
+      .hero-actions, .cta-actions { display: grid; width: 100%; }
+      .button-primary, .button-secondary, .header-cta { width: 100%; }
+      .mini-stats { grid-template-columns: 1fr; }
+      .hero-meta { gap: 0.55rem; }
+      .cta-box { padding: 2.6rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a href="#top" class="brand" aria-label="Coding Vibe Solutions">
+        <span class="brand-mark">&lt;/&gt;</span>
+        Coding <span>Vibe</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav">
+          <li><a href="#sobre">Diagnóstico</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contacto" class="header-cta">Agenda tu consultoría</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal stagger">
+          <div class="hero-badge">Estrategia + IA + Web</div>
+          <h1>
+            Más claridad.<br>
+            <span class="gradient-text">Más autopilot.</span><br>
+            Más crecimiento.
+          </h1>
+          <p>
+            Coding Vibe Solutions combina auditorías estratégicas para negocios con desarrollo web premium e implementación de automatizaciones con IA para que el crecimiento deje de depender del improviso.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="button-primary">Reservar diagnóstico <span>→</span></a>
+            <a href="#servicios" class="button-secondary">Ver servicios</a>
+          </div>
+
+          <div class="hero-meta">
+            <span>Paraná, ER</span>
+            <span>Remoto LATAM</span>
+            <span>Vibe coding</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal stagger" style="--delay: 0.2s;">
+          <div class="code-card parallax" aria-label="Visual de proyecto digital">
+            <div class="code-topbar">
+              <span class="traffic"></span>
+              <span class="traffic"></span>
+              <span class="traffic"></span>
+            </div>
+            <div class="code-body">
+              <span class="code-line"><span class="token-key">const</span> <span class="token-fn">diagnostico</span> = {</span>
+              <span class="code-line">  procesos: <span class="token-number">84</span>,</span>
+              <span class="code-line">  tecnologia: <span class="token-number">67</span>,</span>
+              <span class="code-line">  marketing: <span class="token-number">71</span>,</span>
+              <span class="code-line">  aiOps: <span class="token-string">'automatizar'</span></span>
+              <span class="code-line">};</span>
+              <span class="code-line"><span class="token-key">const</span> <span class="token-fn">resultado</span> = <span class="token-string">'más flujo'</span>;</span>
+              <span class="code-line"> </span>
+              <span class="code-line"><span class="token-key">function</span> <span class="token-fn">escalar</span>() {</span>
+              <span class="code-line">  return <span class="token-string">'sin ruido'</span>;</span>
+              <span class="code-line">}</span>
+            </div>
+            <div class="mini-stats">
+              <div class="mini-stat"><strong data-target="3">0</strong><span>Pilares</span></div>
+              <div class="mini-stat"><strong data-target="24">0</strong><span>Horas</span></div>
+              <div class="mini-stat"><strong data-target="1">0</strong><span>Visión</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Diagnóstico estratégico</span>
+          <h2>El negocio no necesita más caos. Necesita claridad.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal stagger" style="--delay: 0.1s;">
+            <div class="feature-icon">🧭</div>
+            <h3>Auditoría real</h3>
+            <p>Revisamos procesos, tecnología y marketing para detectar cuellos de botella, fragmentación y oportunidades con impacto directo.</p>
+          </article>
+
+          <article class="feature-card reveal stagger" style="--delay: 0.2s;">
+            <div class="feature-icon">⚙️</div>
+            <h3>Decisiones con criterio</h3>
+            <p>Te entregamos recomendaciones accionables sin tecnicismos innecesarios: qué priorizar, qué automatizar y qué esperar.</p>
+          </article>
+
+          <article class="feature-card reveal stagger" style="--delay: 0.3s;">
+            <div class="feature-icon">🚀</div>
+            <h3>Ejecutar sin riesgo</h3>
+            <p>Desde landing page premium hasta flujos automatizados con IA, diseñamos soluciones para que se sienta un impulso real.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Servicios</span>
+          <h2>Soluciones pensadas para negocio real.</h2>
+        </div>
+
+        <div class="services-wrap">
+          <article class="service-card reveal stagger" style="--delay: 0.08s;">
+            <div class="service-kicker">01 · Diagnóstico</div>
+            <h3>Diagnóstico Digital Estratégico</h3>
+            <p>Auditoría integral de procesos, tecnología y marketing con recomendaciones accionables para avanzar con criterio.</p>
+            <ul class="service-list">
+              <li>Mapa de procesos y fricción operativa</li>
+              <li>Diagnóstico tecnológico y puntos de mejora</li>
+              <li>Plan de acción priorizado y claro</li>
+            </ul>
+            <div class="service-pill">estrategia</div>
+          </article>
+
+          <article class="service-card reveal stagger" style="--delay: 0.16s;">
+            <div class="service-kicker">02 · presencia</div>
+            <h3>Desarrollo Web</h3>
+            <p>Landing pages y sitios premium con identidad, claridad y estética moderna para captar y convertir.</p>
+            <ul class="service-list">
+              <li>Diseño premium y UX pensado para vender</li>
+              <li>Desarrollo enfocado en conversión</li>
+              <li>Efectos visuales con estilo premium</li>
+            </ul>
+            <div class="service-pill">diseño</div>
+          </article>
+
+          <article class="service-card reveal stagger" style="--delay: 0.24s;">
+            <div class="service-kicker">03 · automatización</div>
+            <h3>Automatización con IA</h3>
+            <p>Flujos automatizados para ahorrar tiempo, responder mejor y dejar procesos repetitivos a la máquina.</p>
+            <ul class="service-list">
+              <li>Asistentes inteligentes y bots</li>
+              <li>Automatización de tareas operativas</li>
+              <li>Integración con herramientas del negocio</li>
+            </ul>
+            <div class="service-pill">ia</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proceso</span>
+          <h2>Un camino simple, claro y ejecutable.</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step reveal stagger" style="--delay: 0.08s;">
+            <span class="step-number">01</span>
+            <h3>Mapear</h3>
+            <p>Revisamos la operación actual, los puntos de fricción y la visión del negocio.</p>
+          </article>
+
+          <article class="process-step reveal stagger" style="--delay: 0.16s;">
+            <span class="step-number">02</span>
+            <h3>Diagnosticar</h3>
+            <p>Identificamos oportunidades reales: dónde ganar tiempo, claridad y estructura.</p>
+          </article>
+
+          <article class="process-step reveal stagger" style="--delay: 0.24s;">
+            <span class="step-number">03</span>
+            <h3>Diseñar</h3>
+            <p>Definimos una propuesta con prioridad, alcance y una estrategia de ejecución.</p>
+          </article>
+
+          <article class="process-step reveal stagger" style="--delay: 0.32s;">
+            <span class="step-number">04</span>
+            <h3>Implementar</h3>
+            <p>Desplegamos la solución con seguimiento y ajustes para que se sienta el impacto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-band">
+      <div class="container stats-grid reveal">
+        <div class="stat-box">
+          <strong data-target="3">0</strong>
+          <span>Pilares</span>
+        </div>
+        <div class="stat-box">
+          <strong data-target="24">0</strong>
+          <span>Hrs / proyecto</span>
+        </div>
+        <div class="stat-box">
+          <strong data-target="100">0</strong>
+          <span>% estrategia</span>
+        </div>
+        <div class="stat-box">
+          <strong data-target="1">0</strong>
+          <span>visión</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Enfoque</span>
+          <h2>Tecnología que acompaña, no que complica.</h2>
+        </div>
+
+        <div class="showcase">
+          <div class="showcase-panel reveal stagger" style="--delay: 0.08s;">
+            <div class="showcase-visual parallax">
+              <div class="glow-orb orb-1"></div>
+              <div class="glow-orb orb-2"></div>
+              <div class="placeholder-card">Placeholder visual</div>
+            </div>
+          </div>
+
+          <div class="showcase-panel reveal stagger" style="--delay: 0.16s;">
+            <div class="showcase-copy">
+              <h3>El objetivo no es “más herramientas”.</h3>
+              <p>Es construir una estructura más inteligente, más clara y más escalable para que el negocio pueda crecer sin depender de la improvisación.</p>
+              <ul class="bullets">
+                <li>Diagnóstico honesto y estructurado</li>
+                <li>Diseño premium de presencia digital</li>
+                <li>Automatizaciones pensadas para operar mejor</li>
+                <li>Trabajo remoto para toda Latinoamérica</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-wrap" id="contacto">
+      <div class="container">
+        <div class="cta-box reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2>Si hay que construir, que sea con rumbo.</h2>
+          <p>
+            Necesitás una presencia digital premium, un diagnóstico claro o una automatización que te saque trabajo repetitivo. Empezamos por entender cómo está funcionando tu negocio hoy.
+          </p>
+          <div class="cta-actions">
+            <a href="mailto:hola@codingvibesolutions.com" class="button-primary">[Tu email aquí]</a>
+            <a href="https://wa.me/5490000000000" class="button-secondary">[Tu WhatsApp aquí]</a>
+          </div>
+          <div class="placeholder-chip">Placeholder: reemplazar por email, WhatsApp y links reales</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="brand" aria-label="Coding Vibe Solutions">
+            <span class="brand-mark">&lt;/&gt;</span>
+            Coding <span>Vibe</span>
+          </a>
+          <p style="margin-top: 1rem; max-width: 28rem;">Estudio de consultoría digital con foco en auditoría estratégica, desarrollo web premium e implementación de automatizaciones con IA.</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Navegación</p>
+          <ul class="foot-list">
+            <li><a href="#sobre">Diagnóstico</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <p class="footer-title">Contacto</p>
+          <p>[Tu correo aquí]</p>
+          <p>[Tu teléfono aquí]</p>
+          <p>Paraná, Entre Ríos, Argentina</p>
+          <p>Trabajo remoto para toda Latinoamérica</p>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <span>© 2026 Coding Vibe Solutions</span>
+        <span>Más claridad. Menos fricción. Más crecimiento.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => observer.observe(el));
+
+    const parallaxEls = document.querySelectorAll('.parallax');
+    const rippleParallax = () => {
+      const scrollY = window.scrollY;
+      parallaxEls.forEach((el, index) => {
+        const speed = (index + 1) * 0.08;
+        const offset = scrollY * speed;
+        el.style.transform = `translateY(${offset * 0.12}px)`;
+      });
+    };
+    window.addEventListener('scroll', rippleParallax, { passive: true });
+    rippleParallax();
+
+    const counters = document.querySelectorAll('[data-target]');
+    const animateCounter = (el) => {
+      const target = Number(el.dataset.target);
+      const duration = 1200;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const current = Math.floor(progress * target);
+        el.textContent = current;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach((counter) => countObserver.observe(counter));
+  </script>
+</body>
+</html>
