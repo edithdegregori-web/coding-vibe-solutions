@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coding Vibe Solutions | Consultoría Digital</title>
-  <meta name="description" content="Coding Vibe Solutions combina diagnóstico estratégico, desarrollo web premium y automatizaciones con IA para negocios en crecimiento." />
+  <title>SISMO TECH | Inteligencia artificial que mueve tu negocio</title>
+  <meta name="description" content="SISMO TECH ayuda a negocios a ordenar su operación, tener una web que vende y automatizar tareas repetitivas con inteligencia artificial." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -327,34 +327,6 @@
     .token-string { color: #ffbde8; }
     .token-number { color: #8af7b8; }
     .token-fn { color: #d0d7ff; }
-    .mini-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.75rem;
-      padding: 0 1rem 1.15rem;
-      position: relative;
-      z-index: 1;
-    }
-    .mini-stat {
-      border-radius: 1rem;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--line);
-      text-align: center;
-      padding: 0.9rem 0.6rem;
-    }
-    .mini-stat strong {
-      display: block;
-      font-family: "Syne", sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 0.2rem;
-    }
-    .mini-stat span {
-      color: var(--muted);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -415,7 +387,7 @@
     .service-card {
       position: relative;
       overflow: hidden;
-      padding: 1.7rem 1.4rem 1.5rem;
+      padding: 1.7rem 1.4rem 3.4rem;
       border-radius: var(--radius);
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.015);
@@ -471,6 +443,11 @@
       box-shadow: 0 0 10px rgba(103,243,255,0.55);
       margin-top: 0.48rem;
       flex-shrink: 0;
+    }
+    .service-cta {
+      margin-top: 1.4rem;
+      padding: 0.7rem 1.1rem;
+      font-size: 0.78rem;
     }
     .service-pill {
       position: absolute;
@@ -528,32 +505,26 @@
       line-height: 1.7;
     }
 
-    .stats-band {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(11, 17, 24, 0.72);
-    }
-    .stats-grid {
+    .faq-list {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      padding: 2.2rem 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.5rem;
     }
-    .stat-box {
-      text-align: center;
+    .faq-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.3rem;
     }
-    .stat-box strong {
-      display: block;
-      font-size: clamp(2.2rem, 3vw, 3rem);
-      font-family: "Syne", sans-serif;
-      letter-spacing: -0.06em;
-      margin-bottom: 0.35rem;
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--cyan);
     }
-    .stat-box span {
+    .faq-item p {
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.68rem;
+      line-height: 1.7;
     }
 
     .showcase {
@@ -582,22 +553,57 @@
     }
     .orb-1 { width: 13rem; height: 13rem; background: rgba(103,243,255,0.5); top: 1rem; left: 2rem; }
     .orb-2 { width: 19rem; height: 19rem; background: rgba(143,123,255,0.34); bottom: -3rem; right: 0; }
-    .placeholder-card {
+    .before-after {
       position: absolute;
-      inset: auto 1.2rem 1.2rem 1.2rem;
-      display: inline-flex;
-      align-items: center;
+      inset: 1.2rem;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+      z-index: 1;
+    }
+    .before-after-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      padding: 0.8rem 1rem;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(7,13,22,0.4);
+      gap: 0.6rem;
+      padding: 1.2rem 1.1rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(7,13,22,0.45);
       backdrop-filter: blur(12px);
+    }
+    .before-after-col p {
       color: var(--text);
-      border-radius: 999px;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+    .ba-label {
+      display: inline-flex;
       width: fit-content;
-      font-size: 0.72rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.62rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+    .ba-label-after {
+      background: rgba(103,243,255,0.16);
+      color: var(--cyan);
+    }
+    .before-after-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .before-after { flex-direction: column; inset: 1rem; }
+      .before-after-arrow { transform: rotate(90deg); }
     }
     .showcase-copy {
       padding: 1.6rem 1.3rem;
@@ -738,7 +744,7 @@
     .stagger { transition-delay: var(--delay, 0s); }
 
     @media (max-width: 980px) {
-      .feature-grid, .services-wrap, .process-grid, .stats-grid, .footer-grid, .hero-grid, .showcase {
+      .feature-grid, .services-wrap, .process-grid, .faq-list, .footer-grid, .hero-grid, .showcase {
         grid-template-columns: 1fr 1fr;
       }
       .hero-grid, .showcase { grid-template-columns: 1fr; }
@@ -750,11 +756,10 @@
     @media (max-width: 760px) {
       .nav { display: none; }
       .site-header .inner { min-height: 68px; }
-      .feature-grid, .services-wrap, .process-grid, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
+      .feature-grid, .services-wrap, .process-grid, .faq-list, .footer-grid { grid-template-columns: 1fr; }
       .hero { padding-top: 4.6rem; }
       .hero-actions, .cta-actions { display: grid; width: 100%; }
       .button-primary, .button-secondary, .header-cta { width: 100%; }
-      .mini-stats { grid-template-columns: 1fr; }
       .hero-meta { gap: 0.55rem; }
       .cta-box { padding: 2.6rem 1rem; }
     }
@@ -763,9 +768,9 @@
 <body>
   <header class="site-header">
     <div class="container inner">
-      <a href="#top" class="brand" aria-label="Coding Vibe Solutions">
+      <a href="#top" class="brand" aria-label="SISMO TECH">
         <span class="brand-mark">&lt;/&gt;</span>
-        Coding <span>Vibe</span>
+        SISMO <span>TECH</span>
       </a>
 
       <nav aria-label="Navegación principal">
@@ -773,12 +778,12 @@
           <li><a href="#sobre">Diagnóstico</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#resultados">Resultados</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
 
-      <a href="#contacto" class="header-cta">Agenda tu consultoría</a>
+      <a href="#contacto" class="header-cta">Agendá tu consultoría</a>
     </div>
   </header>
 
@@ -786,25 +791,23 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal stagger">
-          <div class="hero-badge">Estrategia + IA + Web</div>
+          <div class="hero-badge">Inteligencia artificial que mueve tu negocio</div>
           <h1>
-            Más claridad.<br>
-            <span class="gradient-text">Más autopilot.</span><br>
-            Más crecimiento.
+            Ordenamos tu negocio<br>
+            y te traemos <span class="gradient-text">más clientes.</span>
           </h1>
           <p>
-            Coding Vibe Solutions combina auditorías estratégicas para negocios con desarrollo web premium e implementación de automatizaciones con IA para que el crecimiento deje de depender del improviso.
+            Revisamos cómo trabajás hoy, armamos una web que vende y automatizamos las tareas repetitivas con inteligencia artificial. Todo explicado sin tecnicismos y por etapas cortas.
           </p>
 
           <div class="hero-actions">
-            <a href="#contacto" class="button-primary">Reservar diagnóstico <span>→</span></a>
-            <a href="#servicios" class="button-secondary">Ver servicios</a>
+            <a href="#contacto" class="button-primary">Agendá tu diagnóstico [COMPLETAR: gratis, si corresponde] <span>→</span></a>
+            <a href="#servicios" class="button-secondary">Ver qué hacemos</a>
           </div>
 
           <div class="hero-meta">
-            <span>Paraná, ER</span>
-            <span>Remoto LATAM</span>
-            <span>Vibe coding</span>
+            <span>Trabajamos con negocios de toda Latinoamérica</span>
+            <span>· Desde Paraná, Argentina</span>
           </div>
         </div>
 
@@ -816,22 +819,16 @@
               <span class="traffic"></span>
             </div>
             <div class="code-body">
-              <span class="code-line"><span class="token-key">const</span> <span class="token-fn">diagnostico</span> = {</span>
-              <span class="code-line">  procesos: <span class="token-number">84</span>,</span>
-              <span class="code-line">  tecnologia: <span class="token-number">67</span>,</span>
-              <span class="code-line">  marketing: <span class="token-number">71</span>,</span>
-              <span class="code-line">  aiOps: <span class="token-string">'automatizar'</span></span>
+              <span class="code-line"><span class="token-key">const</span> <span class="token-fn">tuNegocio</span> = {</span>
+              <span class="code-line">  ventas: <span class="token-string">'ordenar'</span>,</span>
+              <span class="code-line">  atencion: <span class="token-string">'responder rápido'</span>,</span>
+              <span class="code-line">  tareas: <span class="token-string">'automatizar'</span></span>
               <span class="code-line">};</span>
-              <span class="code-line"><span class="token-key">const</span> <span class="token-fn">resultado</span> = <span class="token-string">'más flujo'</span>;</span>
+              <span class="code-line"><span class="token-key">const</span> <span class="token-fn">resultado</span> = <span class="token-string">'más clientes'</span>;</span>
               <span class="code-line"> </span>
-              <span class="code-line"><span class="token-key">function</span> <span class="token-fn">escalar</span>() {</span>
-              <span class="code-line">  return <span class="token-string">'sin ruido'</span>;</span>
+              <span class="code-line"><span class="token-key">function</span> <span class="token-fn">crecer</span>() {</span>
+              <span class="code-line">  return <span class="token-string">'sin vueltas'</span>;</span>
               <span class="code-line">}</span>
-            </div>
-            <div class="mini-stats">
-              <div class="mini-stat"><strong data-target="3">0</strong><span>Pilares</span></div>
-              <div class="mini-stat"><strong data-target="24">0</strong><span>Horas</span></div>
-              <div class="mini-stat"><strong data-target="1">0</strong><span>Visión</span></div>
             </div>
           </div>
         </div>
@@ -842,28 +839,30 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Diagnóstico estratégico</span>
-          <h2>El negocio no necesita más caos. Necesita claridad.</h2>
+          <h2>¿Te suena alguna de estas?</h2>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card reveal stagger" style="--delay: 0.1s;">
             <div class="feature-icon">🧭</div>
-            <h3>Auditoría real</h3>
-            <p>Revisamos procesos, tecnología y marketing para detectar cuellos de botella, fragmentación y oportunidades con impacto directo.</p>
+            <h3>Las mismas preguntas</h3>
+            <p>Respondés las mismas preguntas todos los días.</p>
           </article>
 
           <article class="feature-card reveal stagger" style="--delay: 0.2s;">
             <div class="feature-icon">⚙️</div>
-            <h3>Decisiones con criterio</h3>
-            <p>Te entregamos recomendaciones accionables sin tecnicismos innecesarios: qué priorizar, qué automatizar y qué esperar.</p>
+            <h3>Clientes que se pierden</h3>
+            <p>Te escriben clientes y no sabés cuántos se pierden.</p>
           </article>
 
           <article class="feature-card reveal stagger" style="--delay: 0.3s;">
             <div class="feature-icon">🚀</div>
-            <h3>Ejecutar sin riesgo</h3>
-            <p>Desde landing page premium hasta flujos automatizados con IA, diseñamos soluciones para que se sienta un impulso real.</p>
+            <h3>Por dónde empezar</h3>
+            <p>Querés usar IA pero no sabés por dónde empezar.</p>
           </article>
         </div>
+
+        <p class="section-closing reveal" style="text-align:center; max-width: 40rem; margin: 2.4rem auto 0; color: var(--muted); line-height: 1.7;">Empezamos por entender tu negocio y te decimos qué conviene hacer primero.</p>
       </div>
     </section>
 
@@ -877,37 +876,40 @@
         <div class="services-wrap">
           <article class="service-card reveal stagger" style="--delay: 0.08s;">
             <div class="service-kicker">01 · Diagnóstico</div>
-            <h3>Diagnóstico Digital Estratégico</h3>
-            <p>Auditoría integral de procesos, tecnología y marketing con recomendaciones accionables para avanzar con criterio.</p>
+            <h3>Revisamos tu negocio y te decimos qué mejorar primero</h3>
+            <p>Miramos cómo trabajás hoy (ventas, atención, administración) y te entregamos un plan simple: qué arreglar, qué automatizar y qué puede esperar.</p>
             <ul class="service-list">
-              <li>Mapa de procesos y fricción operativa</li>
-              <li>Diagnóstico tecnológico y puntos de mejora</li>
-              <li>Plan de acción priorizado y claro</li>
+              <li>Qué tareas te hacen perder tiempo</li>
+              <li>Qué herramientas te sirven y cuáles no</li>
+              <li>Un plan ordenado por prioridad</li>
             </ul>
+            <a href="#contacto" class="button-secondary service-cta">Pedir mi diagnóstico</a>
             <div class="service-pill">estrategia</div>
           </article>
 
           <article class="service-card reveal stagger" style="--delay: 0.16s;">
             <div class="service-kicker">02 · presencia</div>
-            <h3>Desarrollo Web</h3>
-            <p>Landing pages y sitios premium con identidad, claridad y estética moderna para captar y convertir.</p>
+            <h3>Una web que te trae consultas</h3>
+            <p>Tu página explica en pocos segundos qué hacés, se ve profesional en el celular y guía al cliente hasta que te escribe.</p>
             <ul class="service-list">
-              <li>Diseño premium y UX pensado para vender</li>
-              <li>Desarrollo enfocado en conversión</li>
-              <li>Efectos visuales con estilo premium</li>
+              <li>Diseño claro y moderno</li>
+              <li>Pensada para que te contacten</li>
+              <li>Rápida y fácil de usar desde el celular</li>
             </ul>
+            <a href="#contacto" class="button-secondary service-cta">Quiero mi web</a>
             <div class="service-pill">diseño</div>
           </article>
 
           <article class="service-card reveal stagger" style="--delay: 0.24s;">
             <div class="service-kicker">03 · automatización</div>
-            <h3>Automatización con IA</h3>
-            <p>Flujos automatizados para ahorrar tiempo, responder mejor y dejar procesos repetitivos a la máquina.</p>
+            <h3>Que el trabajo repetitivo se haga solo</h3>
+            <p>Respuestas automáticas por WhatsApp, turnos, presupuestos y carga de datos. Menos horas en tareas repetitivas y más tiempo para vender.</p>
             <ul class="service-list">
-              <li>Asistentes inteligentes y bots</li>
-              <li>Automatización de tareas operativas</li>
-              <li>Integración con herramientas del negocio</li>
+              <li>Asistentes que responden a tus clientes</li>
+              <li>Tareas del día a día que se hacen solas</li>
+              <li>Conexión con las herramientas que ya usás</li>
             </ul>
+            <a href="#contacto" class="button-secondary service-cta">Ver qué puedo automatizar</a>
             <div class="service-pill">ia</div>
           </article>
         </div>
@@ -924,57 +926,36 @@
         <div class="process-grid">
           <article class="process-step reveal stagger" style="--delay: 0.08s;">
             <span class="step-number">01</span>
-            <h3>Mapear</h3>
-            <p>Revisamos la operación actual, los puntos de fricción y la visión del negocio.</p>
+            <h3>Charlamos</h3>
+            <p>(30 minutos): nos contás cómo funciona tu negocio.</p>
           </article>
 
           <article class="process-step reveal stagger" style="--delay: 0.16s;">
             <span class="step-number">02</span>
-            <h3>Diagnosticar</h3>
-            <p>Identificamos oportunidades reales: dónde ganar tiempo, claridad y estructura.</p>
+            <h3>Analizamos</h3>
+            <p>Buscamos dónde perdés tiempo o clientes.</p>
           </article>
 
           <article class="process-step reveal stagger" style="--delay: 0.24s;">
             <span class="step-number">03</span>
-            <h3>Diseñar</h3>
-            <p>Definimos una propuesta con prioridad, alcance y una estrategia de ejecución.</p>
+            <h3>Te proponemos un plan</h3>
+            <p>Qué hacer, en qué orden y cuánto cuesta.</p>
           </article>
 
           <article class="process-step reveal stagger" style="--delay: 0.32s;">
             <span class="step-number">04</span>
-            <h3>Implementar</h3>
-            <p>Desplegamos la solución con seguimiento y ajustes para que se sienta el impacto.</p>
+            <h3>Lo ponemos en marcha</h3>
+            <p>Lo implementamos y lo ajustamos con vos. [COMPLETAR: plazo estimado, por ejemplo "en 2 a 4 semanas"]</p>
           </article>
         </div>
       </div>
     </section>
 
-    <div class="stats-band">
-      <div class="container stats-grid reveal">
-        <div class="stat-box">
-          <strong data-target="3">0</strong>
-          <span>Pilares</span>
-        </div>
-        <div class="stat-box">
-          <strong data-target="24">0</strong>
-          <span>Hrs / proyecto</span>
-        </div>
-        <div class="stat-box">
-          <strong data-target="100">0</strong>
-          <span>% estrategia</span>
-        </div>
-        <div class="stat-box">
-          <strong data-target="1">0</strong>
-          <span>visión</span>
-        </div>
-      </div>
-    </div>
-
     <section class="section" id="resultados">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Enfoque</span>
-          <h2>Tecnología que acompaña, no que complica.</h2>
+          <h2>Tecnología que trabaja para vos, no al revés.</h2>
         </div>
 
         <div class="showcase">
@@ -982,22 +963,58 @@
             <div class="showcase-visual parallax">
               <div class="glow-orb orb-1"></div>
               <div class="glow-orb orb-2"></div>
-              <div class="placeholder-card">Placeholder visual</div>
+              <div class="before-after">
+                <div class="before-after-col">
+                  <span class="ba-label">Antes</span>
+                  <p>Tareas sueltas, todo en la cabeza, tiempo que se pierde.</p>
+                </div>
+                <div class="before-after-arrow">→</div>
+                <div class="before-after-col">
+                  <span class="ba-label ba-label-after">Después</span>
+                  <p>Procesos ordenados, web que vende, IA que ayuda.</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="showcase-panel reveal stagger" style="--delay: 0.16s;">
             <div class="showcase-copy">
               <h3>El objetivo no es “más herramientas”.</h3>
-              <p>Es construir una estructura más inteligente, más clara y más escalable para que el negocio pueda crecer sin depender de la improvisación.</p>
+              <p>No se trata de sumar herramientas. Se trata de que tu negocio funcione con menos esfuerzo y pueda crecer sin depender del improviso.</p>
               <ul class="bullets">
-                <li>Diagnóstico honesto y estructurado</li>
-                <li>Diseño premium de presencia digital</li>
-                <li>Automatizaciones pensadas para operar mejor</li>
-                <li>Trabajo remoto para toda Latinoamérica</li>
+                <li>Diagnóstico honesto y ordenado</li>
+                <li>Web con diseño profesional</li>
+                <li>Automatizaciones que ahorran trabajo real</li>
+                <li>Atención remota para toda Latinoamérica</li>
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Lo que seguro querés saber</h2>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item reveal stagger" style="--delay: 0.08s;">
+            <h3>¿Cuánto cuesta?</h3>
+            <p>[COMPLETAR: rango de precios o forma de cotizar]</p>
+          </article>
+
+          <article class="faq-item reveal stagger" style="--delay: 0.16s;">
+            <h3>¿Cuánto tarda?</h3>
+            <p>[COMPLETAR: plazos estimados por servicio]</p>
+          </article>
+
+          <article class="faq-item reveal stagger" style="--delay: 0.24s;">
+            <h3>¿Qué necesitás de mí?</h3>
+            <p>[COMPLETAR: qué información, accesos o materiales debe aportar el cliente]</p>
+          </article>
         </div>
       </div>
     </section>
@@ -1006,13 +1023,13 @@
       <div class="container">
         <div class="cta-box reveal">
           <span class="eyebrow">Contacto</span>
-          <h2>Si hay que construir, que sea con rumbo.</h2>
+          <h2>Contanos de tu negocio y te respondemos [COMPLETAR: en 24 horas].</h2>
           <p>
-            Necesitás una presencia digital premium, un diagnóstico claro o una automatización que te saque trabajo repetitivo. Empezamos por entender cómo está funcionando tu negocio hoy.
+            Sin compromiso. En la primera charla vemos si podemos ayudarte.
           </p>
           <div class="cta-actions">
-            <a href="mailto:hola@codingvibesolutions.com" class="button-primary">[Tu email aquí]</a>
-            <a href="https://wa.me/5490000000000" class="button-secondary">[Tu WhatsApp aquí]</a>
+            <a href="mailto:hola@codingvibesolutions.com" class="button-primary">[COMPLETAR: EMAIL]</a>
+            <a href="https://wa.me/5490000000000?text=Hola%2C%20quiero%20consultar%20por%20sus%20servicios" class="button-secondary">[COMPLETAR: WHATSAPP]</a>
           </div>
           <div class="placeholder-chip">Placeholder: reemplazar por email, WhatsApp y links reales</div>
         </div>
@@ -1024,11 +1041,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#top" class="brand" aria-label="Coding Vibe Solutions">
+          <a href="#top" class="brand" aria-label="SISMO TECH">
             <span class="brand-mark">&lt;/&gt;</span>
-            Coding <span>Vibe</span>
+            SISMO <span>TECH</span>
           </a>
-          <p style="margin-top: 1rem; max-width: 28rem;">Estudio de consultoría digital con foco en auditoría estratégica, desarrollo web premium e implementación de automatizaciones con IA.</p>
+          <p style="margin-top: 1rem; max-width: 28rem;">Inteligencia artificial que mueve tu negocio.</p>
         </div>
 
         <div>
@@ -1037,21 +1054,22 @@
             <li><a href="#sobre">Diagnóstico</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
 
         <div class="footer-contact">
           <p class="footer-title">Contacto</p>
-          <p>[Tu correo aquí]</p>
-          <p>[Tu teléfono aquí]</p>
+          <p>[COMPLETAR: EMAIL]</p>
+          <p>[COMPLETAR: TELÉFONO]</p>
           <p>Paraná, Entre Ríos, Argentina</p>
           <p>Trabajo remoto para toda Latinoamérica</p>
         </div>
       </div>
 
       <div class="footer-meta">
-        <span>© 2026 Coding Vibe Solutions</span>
+        <span>© 2026 SISMO TECH</span>
         <span>Más claridad. Menos fricción. Más crecimiento.</span>
       </div>
     </div>
@@ -1080,32 +1098,6 @@
     };
     window.addEventListener('scroll', rippleParallax, { passive: true });
     rippleParallax();
-
-    const counters = document.querySelectorAll('[data-target]');
-    const animateCounter = (el) => {
-      const target = Number(el.dataset.target);
-      const duration = 1200;
-      const start = performance.now();
-
-      const tick = (now) => {
-        const progress = Math.min((now - start) / duration, 1);
-        const current = Math.floor(progress * target);
-        el.textContent = current;
-        if (progress < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          countObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach((counter) => countObserver.observe(counter));
   </script>
 </body>
 </html>
