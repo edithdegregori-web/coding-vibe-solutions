@@ -792,6 +792,89 @@
       .header-cta { display: none; }
     }
   </style>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <style>
+    :root {
+      --chat--color-primary: #00d8ff;
+      --chat--color-primary-shade-50: #00c2e6;
+      --chat--color-primary-shade-100: #00acd0;
+      --chat--color-secondary: #8f7bff;
+      --chat--color-secondary-shade-50: #7a66f0;
+      --chat--color-light: #0b1420;
+      --chat--color-light-shade-50: #101a28;
+      --chat--color-light-shade-100: #1c2a3c;
+      --chat--color-medium: #2a3a50;
+      --chat--color-dark: #ecf7ff;
+      --chat--color-typing: #9bb4cc;
+      --chat--header--background: #070d16;
+      --chat--header--color: #ecf7ff;
+      --chat--message--bot--background: #142033;
+      --chat--message--bot--color: #ecf7ff;
+      --chat--message--user--background: #8f7bff;
+      --chat--message--user--color: #ffffff;
+      --chat--toggle--background: #00d8ff;
+      --chat--toggle--hover--background: #67f3ff;
+      --chat--toggle--active--background: #8f7bff;
+      --chat--toggle--color: #070d16;
+      --chat--border-radius: 18px;
+      --chat--window--width: 380px;
+      --chat--window--height: 600px;
+    }
+  </style>
+  <style>
+    /* Ajustes del chat de n8n: el widget usa algunos nombres con doble guion
+       (--chat--color--primary) y trae el campo de texto en blanco. */
+    :root {
+      --chat--font-family: "Space Grotesk", sans-serif;
+      --chat--color--primary: #00d8ff;
+      --chat--color--primary-shade-50: #00c2e6;
+      --chat--color--primary--shade-100: #00acd0;
+      --chat--color--secondary: #8f7bff;
+      --chat--header--border-bottom: 1px solid rgba(156, 168, 196, 0.18);
+      --chat--window--border: 1px solid rgba(103, 243, 255, 0.3);
+      --chat--input--background: #101a28;
+      --chat--input--container--background: #101a28;
+      --chat--input--text-color: #ecf7ff;
+      --chat--input--send--button--background: #101a28;
+      --chat--input--send--button--background-hover: #1c2a3c;
+      --chat--input--send--button--color: #00d8ff;
+      --chat--input--send--button--color-hover: #67f3ff;
+      --chat--input--file--button--background: #101a28;
+      --chat--input--file--button--color: #00d8ff;
+      --chat--input--file--button--color-hover: #67f3ff;
+      --chat--footer--background: #0b1420;
+      --chat--footer--color: #9bb4cc;
+      --chat--footer--border-top: 1px solid rgba(156, 168, 196, 0.18);
+      --chat--button--background--primary: #00d8ff;
+      --chat--button--background--primary--hover: #67f3ff;
+      --chat--button--color--primary: #070d16;
+      --chat--button--color--primary--hover: #070d16;
+    }
+    #n8n-chat textarea,
+    #n8n-chat button,
+    #n8n-chat input {
+      font-family: var(--chat--font-family);
+    }
+    #n8n-chat textarea::placeholder {
+      color: #9bb4cc;
+      opacity: 1;
+    }
+    #n8n-chat .chat-window {
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 32px rgba(103, 243, 255, 0.12);
+    }
+    #n8n-chat .chat-window-toggle {
+      box-shadow: 0 10px 28px rgba(0, 216, 255, 0.35);
+    }
+    @media (max-width: 480px) {
+      :root {
+        --chat--window--width: calc(100vw - 2rem);
+        --chat--window--height: calc(100dvh - 7.5rem);
+        --chat--toggle--size: 56px;
+      }
+      /* Espacio para que el botón flotante no tape el final del footer. */
+      .site-footer { padding-bottom: 6rem; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -1677,6 +1760,35 @@
       new ResizeObserver(() => { resize(); start(); }).observe(wrap);
       if (document.fonts) document.fonts.ready.then(start);
     })();
+  </script>
+  <div id="n8n-chat"></div>
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://proyecto-01-n8n.jzndzk.easypanel.host/webhook/6c87a8bb-ae1b-4e6f-8f42-e6c92847946d/chat',
+      webhookConfig: { method: 'POST', headers: {} },
+      target: '#n8n-chat',
+      mode: 'window',
+      chatInputKey: 'chatInput',
+      chatSessionKey: 'sessionId',
+      metadata: {},
+      showWelcomeScreen: false,
+      defaultLanguage: 'en',
+      initialMessages: [
+        '¡Hola! 👋',
+        'Soy Coding IA, el asistente virtual de Coding Vibe Solutions. ¿En qué te puedo ayudar?'
+      ],
+      i18n: {
+        en: {
+          title: 'Coding IA',
+          subtitle: 'Asistente virtual de Coding Vibe Solutions · Atendemos 24/7',
+          footer: '',
+          getStarted: 'Nueva conversación',
+          inputPlaceholder: 'Escribí tu consulta...',
+        },
+      },
+    });
   </script>
 </body>
 </html>
