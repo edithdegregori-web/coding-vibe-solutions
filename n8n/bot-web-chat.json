@@ -1,0 +1,183 @@
+{
+  "name": "proyecto bot web",
+  "nodes": [
+    {
+      "id": "a95804f4-f5ab-4428-a273-0cd633bacbdc",
+      "name": "When chat message received",
+      "webhookId": "6c87a8bb-ae1b-4e6f-8f42-e6c92847946d",
+      "notesInFlow": false,
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -2528,
+        -304
+      ],
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {}
+      }
+    },
+    {
+      "id": "12dc92a5-90eb-4c5c-9254-9bf9790d769e",
+      "name": "Z.ai GLM",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "position": [
+        -2224,
+        80
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "glm-4.7"
+        },
+        "responsesApiEnabled": false,
+        "options": {}
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "ToJSIMgbdlGf1B1x",
+          "name": "api Z .ia"
+        }
+      }
+    },
+    {
+      "id": "47abeed2-653b-44eb-a34e-1494f9958038",
+      "name": "Simple Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        -1904,
+        80
+      ],
+      "parameters": {
+        "contextWindowLength": 10
+      }
+    },
+    {
+      "id": "e95daace-0883-413d-b78b-40643082e631",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -2000,
+        -304
+      ],
+      "parameters": {
+        "options": {
+          "systemMessage": "ROL\nSos el asistente virtual de Coding Vibe Solutions, una empresa de software, IA y estrategia digital para negocios reales. Atendés a las personas que visitan la web desde el chat.\n\nFecha actual: {{ $now.setLocale('es').toFormat('DDDD') }}\n\n# OBJETIVO\n1. Responder las dudas del visitante sobre Coding Vibe Solutions con información verificada.\n2. Cuando muestre interés (pregunta por precios, plazos, cómo empezar, o describe un problema de su negocio), invitarlo a agendar el DIAGNÓSTICO GRATIS: una charla de 30 minutos por WhatsApp.\n\n# DATOS FIJOS (podés usarlos sin buscar)\n- Ubicación: Paraná (Entre Ríos) y La Matanza (Buenos Aires), Argentina. Atención virtual para toda Latinoamérica.\n- Primer paso: diagnóstico gratis de 30 minutos, sin compromiso.\n- Precios: se cotizan según cada negocio, después de la auditoría. No hay precios fijos.\n- Contacto oficial (el ÚNICO que podés dar):\n  WhatsApp: https://wa.me/5493435430029?text=Hola%2C%20quiero%20coordinar%20mi%20diagn%C3%B3stico%20gratis\n  Respondemos en menos de 24 horas.\n\n# CÓMO USAR TUS HERRAMIENTAS\n- Tenés UNA herramienta de búsqueda: \"Buscar info de Coding Vibe\" (Pinecone), con toda la información de la web: servicios, proceso, método de trabajo, preguntas frecuentes y contacto.\n- SIEMPRE consultala antes de responder sobre servicios, proceso, plazos, metodología, preguntas frecuentes o cualquier dato de la empresa que no esté en \"Datos fijos\".\n- Respondé SOLO con lo que devuelva la búsqueda. Podés resumirlo y reformularlo, pero no agregues datos que no",
+          "maxIterations": 10
+        }
+      }
+    },
+    {
+      "id": "02780b70-2fb3-4ae5-b228-4ae74e4e1926",
+      "name": "Buscar info de Coding Vibe",
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        -1680,
+        80
+      ],
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Busca en la información oficial de Coding Vibe Solutions: servicios (auditoría tech, desarrollo de software, automatización con IA, presencia digital, soporte), proceso de trabajo, método SMART-UP, preguntas frecuentes (costos, plazos, cómo arrancar, seguridad de datos) y ubicación. Usala SIEMPRE antes de responder sobre la empresa. La consulta debe ser una frase corta en español con el tema, por ejemplo: 'cuánto cuesta' o 'automatización con WhatsApp'.",
+        "pineconeIndex": {
+          "__rl": true,
+          "mode": "list",
+          "value": "botweb"
+        },
+        "options": {}
+      },
+      "credentials": {
+        "pineconeApi": {
+          "id": "zvl2nMZTVH2eUpDL",
+          "name": "Pinecone account"
+        }
+      }
+    },
+    {
+      "id": "ff31274e-8288-4f8d-bdd5-2b8e405f49c2",
+      "name": "Embeddings Gemini",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -1600,
+        288
+      ],
+      "parameters": {},
+      "credentials": {
+        "googlePalmApi": {
+          "id": "qcn88OgFWzdHEnrc",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Z.ai GLM": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Buscar info de Coding Vibe",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar info de Coding Vibe": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  }
+}
