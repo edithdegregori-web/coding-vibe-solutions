@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog de Coding Vibe Solutions</title>
+    <link>https://www.codingvibesolutions.site/blog</link>
+    <atom:link href="https://www.codingvibesolutions.site/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Guías prácticas de digitalización, software a medida y automatización con IA para PyMEs de Argentina y Latinoamérica.</description>
+    <language>es</language>
+    <lastBuildDate>Tue, 13 Oct 2026 15:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Cómo digitalizar una PyME en 2026: guía completa por etapas</title>
+      <link>https://www.codingvibesolutions.site/blog/digitalizar-pyme-2026</link>
+      <guid isPermaLink="true">https://www.codingvibesolutions.site/blog/digitalizar-pyme-2026</guid>
+      <pubDate>Sat, 10 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Ordená tu negocio</category>
+      <description>Guía para digitalizar una PyME en 2026 por etapas: diagnóstico, orden, software, integraciones y automatización con IA, sin gastar de más.</description>
+    </item>
+    <item>
+      <title>Auditoría tecnológica para PyMEs: qué es y por qué tu negocio la necesita</title>
+      <link>https://www.codingvibesolutions.site/blog/auditoria-tecnologica-pyme</link>
+      <guid isPermaLink="true">https://www.codingvibesolutions.site/blog/auditoria-tecnologica-pyme</guid>
+      <pubDate>Sat, 10 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Ordená tu negocio</category>
+      <description>Qué es una auditoría tecnológica para una PyME, qué se revisa, qué entregable tenés que recibir y cómo prepararte para sacarle el máximo provecho.</description>
+    </item>
+    <item>
+      <title>7 señales de que tu PyME necesita software a medida</title>
+      <link>https://www.codingvibesolutions.site/blog/senales-necesitas-software-a-medida</link>
+      <guid isPermaLink="true">https://www.codingvibesolutions.site/blog/senales-necesitas-software-a-medida</guid>
+      <pubDate>Sat, 10 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Ordená tu negocio</category>
+      <description>¿Tu PyME necesita software a medida? 7 señales concretas del día a día, qué hacer con cada una y cuándo alcanza con una herramienta del mercado.</description>
+    </item>
+    <item>
+      <title>Cuánto cuesta digitalizar una PyME en LATAM: precios orientativos 2026</title>
+      <link>https://www.codingvibesolutions.site/blog/cuanto-cuesta-digitalizar-pyme-latam</link>
+      <guid isPermaLink="true">https://www.codingvibesolutions.site/blog/cuanto-cuesta-digitalizar-pyme-latam</guid>
+      <pubDate>Sat, 10 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Ordená tu negocio</category>
+      <description>Cuánto cuesta digitalizar una PyME en LATAM: qué define el precio, rangos orientativos por tipo de proyecto y cómo pedir presupuestos comparables.</description>
+    </item>
+  </channel>
+</rss>
