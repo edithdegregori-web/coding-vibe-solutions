@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog de Coding Vibe Solutions</title>
+    <title>Blog de SISMO TECH</title>
     <link>https://www.codingvibesolutions.site/blog</link>
     <atom:link href="https://www.codingvibesolutions.site/blog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Guías prácticas de digitalización, software a medida y automatización con IA para PyMEs de Argentina y Latinoamérica.</description>

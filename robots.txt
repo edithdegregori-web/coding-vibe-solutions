@@ -1,4 +1,4 @@
-# Coding Vibe Solutions
+# SISMO TECH
 # Permitimos a todos los buscadores y a los rastreadores de IA.
 
 User-agent: *

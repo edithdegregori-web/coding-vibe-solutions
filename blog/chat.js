@@ -1,4 +1,4 @@
-// Chat de Coding IA en las páginas del blog. Misma configuración que index.html.
+// Chat de Sismo IA en las páginas del blog. Misma configuración que index.html.
 import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
 createChat({
@@ -15,12 +15,12 @@ createChat({
   defaultLanguage: 'en',
   initialMessages: [
     '¡Hola! 👋',
-    'Soy Coding IA, el asistente virtual de Coding Vibe Solutions. ¿En qué te puedo ayudar?'
+    'Soy Sismo IA, el asistente virtual de SISMO TECH. ¿En qué te puedo ayudar?'
   ],
   i18n: {
     en: {
-      title: 'Coding IA',
-      subtitle: 'Asistente virtual de Coding Vibe Solutions · Atendemos 24/7',
+      title: 'Sismo IA',
+      subtitle: 'Asistente virtual de SISMO TECH · Atendemos 24/7',
       footer: '',
       getStarted: 'Nueva conversación',
       inputPlaceholder: 'Escribí tu consulta...',

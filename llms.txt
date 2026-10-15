@@ -1,6 +1,6 @@
-# Coding Vibe Solutions
+# SISMO TECH
 
-> Coding Vibe Solutions ofrece software, IA y estrategia digital para PyMEs de Argentina y Latinoamérica. Audita cómo trabaja cada negocio, desarrolla el software que necesita (web, CRM, dashboards, integraciones) y automatiza lo repetitivo con IA, por etapas y sin tecnicismos.
+> SISMO TECH ofrece software, IA y estrategia digital para PyMEs de Argentina y Latinoamérica. Audita cómo trabaja cada negocio, desarrolla el software que necesita (web, CRM, dashboards, integraciones) y automatiza lo repetitivo con IA, por etapas y sin tecnicismos.
 
 - Sede: Paraná (Entre Ríos) y La Matanza (Buenos Aires), Argentina. Atención virtual para toda Latinoamérica.
 - Servicios: Auditoría TECH, Desarrollo de software, Automatización con IA, Presencia digital, Soporte y evolución.
