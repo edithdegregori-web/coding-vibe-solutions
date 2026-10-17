@@ -11,14 +11,14 @@
 
 ## Páginas principales
 
-- [Inicio](https://www.codingvibesolutions.site/): servicios, proceso de trabajo y preguntas frecuentes.
-- [Blog](https://www.codingvibesolutions.site/blog): guías de digitalización e IA para PyMEs.
+- [Inicio](https://www.sismotech.online/): servicios, proceso de trabajo y preguntas frecuentes.
+- [Blog](https://www.sismotech.online/blog): guías de digitalización e IA para PyMEs.
 
 ## Blog
 
 ### Ordená tu negocio
 
-- [Cómo digitalizar una PyME en 2026: guía completa por etapas](https://www.codingvibesolutions.site/blog/digitalizar-pyme-2026): Guía para digitalizar una PyME en 2026 por etapas: diagnóstico, orden, software, integraciones y automatización con IA, sin gastar de más.
-- [Auditoría tecnológica para PyMEs: qué es y por qué tu negocio la necesita](https://www.codingvibesolutions.site/blog/auditoria-tecnologica-pyme): Qué es una auditoría tecnológica para una PyME, qué se revisa, qué entregable tenés que recibir y cómo prepararte para sacarle el máximo provecho.
-- [7 señales de que tu PyME necesita software a medida](https://www.codingvibesolutions.site/blog/senales-necesitas-software-a-medida): ¿Tu PyME necesita software a medida? 7 señales concretas del día a día, qué hacer con cada una y cuándo alcanza con una herramienta del mercado.
-- [Cuánto cuesta digitalizar una PyME en LATAM: precios orientativos 2026](https://www.codingvibesolutions.site/blog/cuanto-cuesta-digitalizar-pyme-latam): Cuánto cuesta digitalizar una PyME en LATAM: qué define el precio, rangos orientativos por tipo de proyecto y cómo pedir presupuestos comparables.
+- [Cómo digitalizar una PyME en 2026: guía completa por etapas](https://www.sismotech.online/blog/digitalizar-pyme-2026): Guía para digitalizar una PyME en 2026 por etapas: diagnóstico, orden, software, integraciones y automatización con IA, sin gastar de más.
+- [Auditoría tecnológica para PyMEs: qué es y por qué tu negocio la necesita](https://www.sismotech.online/blog/auditoria-tecnologica-pyme): Qué es una auditoría tecnológica para una PyME, qué se revisa, qué entregable tenés que recibir y cómo prepararte para sacarle el máximo provecho.
+- [7 señales de que tu PyME necesita software a medida](https://www.sismotech.online/blog/senales-necesitas-software-a-medida): ¿Tu PyME necesita software a medida? 7 señales concretas del día a día, qué hacer con cada una y cuándo alcanza con una herramienta del mercado.
+- [Cuánto cuesta digitalizar una PyME en LATAM: precios orientativos 2026](https://www.sismotech.online/blog/cuanto-cuesta-digitalizar-pyme-latam): Cuánto cuesta digitalizar una PyME en LATAM: qué define el precio, rangos orientativos por tipo de proyecto y cómo pedir presupuestos comparables.

@@ -25,4 +25,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://www.codingvibesolutions.site/sitemap.xml
+Sitemap: https://www.sismotech.online/sitemap.xml
