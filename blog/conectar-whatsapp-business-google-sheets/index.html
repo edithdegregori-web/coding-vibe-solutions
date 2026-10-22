@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conectar WhatsApp Business con Google Sheets: paso a paso</title>
+  <meta name="description" content="Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets" />
+  <meta name="theme-color" content="#070d16" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="Blog de SISMO TECH" href="/blog/rss.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="SISMO TECH" />
+  <meta property="og:title" content="Conectar WhatsApp Business con Google Sheets: paso a paso" />
+  <meta property="og:description" content="Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno." />
+  <meta property="og:url" content="https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets" />
+  <meta property="og:image" content="https://www.sismotech.online/blog/img/conectar-whatsapp-business-google-sheets.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tutorial para conectar WhatsApp Business con Google Sheets usando la API oficial y una herramienta de automatización" />
+  <meta property="article:published_time" content="2026-10-22" />
+  <meta property="article:modified_time" content="2026-10-22" />
+  <meta property="article:section" content="Software a medida vs. herramientas genéricas" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Conectar WhatsApp Business con Google Sheets: paso a paso" />
+  <meta name="twitter:description" content="Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno." />
+  <meta name="twitter:image" content="https://www.sismotech.online/blog/img/conectar-whatsapp-business-google-sheets.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" />
+  <link rel="stylesheet" href="/blog/blog.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.sismotech.online/#organization",
+      "name": "SISMO TECH",
+      "url": "https://www.sismotech.online/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.sismotech.online/favicon.svg"
+      },
+      "description": "Software, IA y estrategia digital para PyMEs de Argentina y Latinoamérica: auditoría tecnológica, desarrollo de software a medida, integraciones y automatización con IA.",
+      "areaServed": "Latinoamérica",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+54 9 343 543 0029",
+        "url": "https://wa.me/5493435430029",
+        "availableLanguage": "es"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#article",
+      "headline": "Cómo conectar WhatsApp Business con Google Sheets (paso a paso)",
+      "description": "Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.sismotech.online/blog/img/conectar-whatsapp-business-google-sheets.png",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-10-22",
+      "inLanguage": "es",
+      "author": {
+        "@type": "Organization",
+        "name": "Equipo de SISMO TECH",
+        "url": "https://www.sismotech.online/"
+      },
+      "publisher": {
+        "@id": "https://www.sismotech.online/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets"
+      },
+      "articleSection": "Software a medida vs. herramientas genéricas",
+      "keywords": "conectar whatsapp con google sheets, whatsapp business api google sheets, guardar mensajes de whatsapp en una planilla, automatizar whatsapp con google sheets, whatsapp con n8n make o zapier",
+      "wordCount": 2643
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#howto",
+      "name": "Cómo conectar WhatsApp Business con Google Sheets usando la API oficial",
+      "description": "Pasos para que cada mensaje que llega a tu número de WhatsApp Business se registre solo en una planilla de Google Sheets, con la API oficial de WhatsApp y una herramienta de automatización.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.sismotech.online/blog/img/conectar-whatsapp-business-google-sheets.png",
+        "width": 1200,
+        "height": 630
+      },
+      "inLanguage": "es",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "WhatsApp Business Platform (Cloud API)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Google Sheets"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Herramienta de automatización: n8n, Make o Zapier"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Un número de teléfono para usar con la API de WhatsApp"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Un portfolio comercial de Meta"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Definí qué datos querés guardar",
+          "text": "Hacé una lista corta de los datos que vas a guardar de cada mensaje, por ejemplo fecha y hora, número, nombre del perfil, tipo de mensaje y texto.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Prepará la planilla en Google Sheets",
+          "text": "Creá una planilla con una pestaña para los mensajes y escribí en la primera fila un encabezado por cada dato que vas a guardar.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Elegí cómo vas a acceder a la API de WhatsApp",
+          "text": "Decidí si vas a usar la Cloud API directamente con Meta o a través de un proveedor oficial de WhatsApp Business.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Registrá y verificá tu número",
+          "text": "Agregá el número de teléfono a tu cuenta de WhatsApp Business en Meta, verificalo con el código que recibís por SMS o llamada y configurá el nombre visible del negocio.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Creá el flujo en tu herramienta de automatización",
+          "text": "En n8n, Make o Zapier, creá un flujo nuevo que empiece con un disparador de mensajes nuevos de WhatsApp y conectalo con tu cuenta de Meta o de tu proveedor.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-5"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Conectá Meta con tu flujo mediante un webhook",
+          "text": "Cargá en la configuración de WhatsApp de tu app de Meta la dirección de webhook que te da la herramienta de automatización y suscribite a las notificaciones de mensajes.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-6"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Agregá el paso de Google Sheets",
+          "text": "Sumá al flujo una acción de Google Sheets que agregue una fila y asigná cada dato del mensaje a su columna.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-7"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 8,
+          "name": "Filtrá las notificaciones que no son mensajes",
+          "text": "Agregá un filtro para que solo los mensajes entrantes creen filas, y usá el identificador de cada mensaje para evitar duplicados.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-8"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 9,
+          "name": "Probá con mensajes reales y activá el flujo",
+          "text": "Mandá mensajes de prueba de distintos tipos, revisá que cada uno cree la fila correcta y recién entonces activá el flujo.",
+          "url": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#paso-9"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.sismotech.online/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.sismotech.online/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo conectar WhatsApp Business con Google Sheets (paso a paso)",
+          "item": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo conectar la app gratuita de WhatsApp Business con Google Sheets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No de forma automática y oficial. La app de WhatsApp Business no ofrece una API para que otros programas lean tus mensajes. Podés exportar chats a mano o usar tu número con la API oficial de WhatsApp, que es la que permite registrar cada mensaje en una planilla de forma automática."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber programar para conectar WhatsApp con Google Sheets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No necesariamente. Con herramientas de automatización como n8n, Make o Zapier armás el flujo con pasos visuales. Lo que más trabajo da es configurar la cuenta de Meta y el número. Si preferís no hacerlo, un equipo técnico te lo puede dejar armado y documentado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta registrar los mensajes de WhatsApp en Google Sheets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del método y del volumen. Con la API oficial, Meta cobra principalmente por los mensajes de plantilla que envía tu negocio, según sus tarifas vigentes. A eso se suma el plan de la herramienta de automatización o el servidor, y el abono del proveedor si usás uno. Revisá siempre las páginas oficiales de precios, porque cambian."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo guardar también las fotos y los audios que me mandan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, pero requiere pasos extra. La notificación de un mensaje con foto o audio trae un identificador del archivo, no el archivo. El flujo tiene que descargarlo con ese identificador, guardarlo en algún lugar, como Google Drive, y escribir en la planilla el enlace al archivo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si recibo muchos mensajes por día?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Sheets funciona bien con volúmenes moderados, pero se vuelve lento con muchas filas y tiene límites de uso. Además, cada mensaje consume tareas o ejecuciones de tu herramienta de automatización. Si el volumen crece mucho, conviene guardar los mensajes en una base de datos y ver los números en un dashboard."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="container inner">
+      <a href="/" class="brand" aria-label="SISMO TECH, ir al inicio">
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="brand-name">SISMO <em>TECH</em></span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav">
+          <li><a href="/#sobre">Diagnóstico</a></li>
+          <li><a href="/#servicios">Servicios</a></li>
+          <li><a href="/#proceso">Proceso</a></li>
+          <li><a href="/#faq">Preguntas</a></li>
+          <li><a href="/blog" aria-current="page">Blog</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/5493435430029?text=Hola%2C%20quiero%20coordinar%20mi%20diagn%C3%B3stico%20gratis" class="header-cta">WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article>
+      <div class="container article-hero">
+        <nav class="breadcrumbs" aria-label="Migas de pan">
+          <ol>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><span aria-current="page">Conectar WhatsApp Business con Google Sheets</span></li>
+          </ol>
+        </nav>
+        <span class="post-tag">Software a medida vs. herramientas genéricas</span>
+        <h1>Cómo conectar WhatsApp Business con Google Sheets (paso a paso)</h1>
+        <div class="article-meta">
+          <span>Por <strong>Equipo de SISMO TECH</strong></span>
+          <span>Publicado: <time datetime="2026-10-22">22 de octubre de 2026</time></span>
+          <span>Actualizado: <time datetime="2026-10-22">22 de octubre de 2026</time></span>
+          <span>14 min de lectura</span>
+        </div>
+
+        <section class="quick-answer" aria-labelledby="respuesta-rapida">
+          <h2 id="respuesta-rapida">Respuesta rápida</h2>
+          <p>Para conectar WhatsApp con Google Sheets de forma automática necesitás la API oficial de WhatsApp, directamente con Meta o a través de un proveedor oficial, y una herramienta de automatización como n8n, Make o Zapier que escriba cada mensaje en tu planilla. La app gratuita de WhatsApp Business, por sí sola, no se conecta de forma automática con Google Sheets.</p>
+        </section>
+
+        <figure class="featured-image">
+          <!-- IMAGEN DESTACADA: reemplazá /blog/img/conectar-whatsapp-business-google-sheets.png por una imagen propia de 1200 × 630 px con el mismo nombre. -->
+          <img src="/blog/img/conectar-whatsapp-business-google-sheets.png" alt="Tutorial para conectar WhatsApp Business con Google Sheets usando la API oficial y una herramienta de automatización" width="1200" height="630" fetchpriority="high" />
+        </figure>
+      </div>
+
+      <div class="container article-layout">
+        <details class="toc" open>
+          <summary>Índice de contenidos</summary>
+          <nav aria-label="Índice de contenidos">
+            <ol>
+              <li><a href="#se-puede">¿Se puede conectar WhatsApp Business con Google Sheets?</a></li>
+              <li><a href="#metodos">¿Qué métodos existen para conectar WhatsApp con Google Sheets?</a></li>
+              <li><a href="#antes-de-empezar">¿Qué necesitás antes de empezar?</a></li>
+              <li><a href="#paso-a-paso">Paso a paso: conectar WhatsApp Business con Google Sheets con la API oficial</a></li>
+              <li><a href="#limites">¿Qué límites tiene conectar WhatsApp con Google Sheets?</a></li>
+              <li><a href="#costos">¿Cuánto cuesta conectar WhatsApp con Google Sheets?</a></li>
+              <li><a href="#ejemplo">Ejemplo práctico: un instituto de idiomas registra sus consultas</a></li>
+              <li><a href="#errores-comunes">Errores comunes al conectar WhatsApp con una planilla</a></li>
+              <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+              <li><a href="#conclusion">Conclusión</a></li>
+            </ol>
+          </nav>
+        </details>
+
+        <div class="prose">
+          <p>Si tu negocio atiende por WhatsApp, seguramente ya te pasó: una consulta que nadie anotó, un cliente que escribió hace una semana y no tuvo respuesta, o un fin de mes en el que no sabés cuántas consultas entraron. Registrar cada mensaje en una planilla de Google Sheets resuelve buena parte de ese problema, sin cambiar de herramienta.</p>
+          <p>En este tutorial te explicamos qué métodos existen hoy para conectar WhatsApp con Google Sheets, cuál conviene en cada caso, cómo hacerlo paso a paso con la API oficial y qué límites y costos tenés que conocer antes de empezar.</p>
+
+          <h2 id="se-puede">¿Se puede conectar WhatsApp Business con Google Sheets?</h2>
+          <p>Sí, pero depende de qué WhatsApp usás. No es lo mismo la app de WhatsApp Business que la plataforma para empresas, y solo la segunda permite una conexión automática y oficial.</p>
+          <p><strong>WhatsApp Business (la app)</strong> es la aplicación gratuita para celular pensada para negocios chicos. Tiene perfil de empresa, catálogo, respuestas rápidas, etiquetas y mensajes automáticos de bienvenida y de ausencia. Lo que no tiene es una API abierta para que otros programas lean tus mensajes.</p>
+          <p><strong>WhatsApp Business Platform (la API)</strong> es la versión de WhatsApp pensada para integrarse con otros sistemas. Se usa a través de la Cloud API de Meta, directamente o mediante un proveedor oficial (en inglés, <em>Business Solution Provider</em>). Es la que permite conectar WhatsApp con Google Sheets de forma automática.</p>
+          <p>Un detalle importante: en general, un número que se usa con la API deja de funcionar en la app común. Meta permite en algunos casos usar el mismo número en la app de WhatsApp Business y en la API al mismo tiempo, una función que llama coexistencia <span class="verificar">[VERIFICAR: disponibilidad en tu país y con tu proveedor]</span>. Consultalo antes de mover tu número principal.</p>
+
+          <h2 id="metodos">¿Qué métodos existen para conectar WhatsApp con Google Sheets?</h2>
+          <p>Hoy existen cuatro métodos oficiales o seguros. Se diferencian en cuánto se automatizan, cuánto trabajo llevan y cómo se cobran.</p>
+          <div class="table-wrap">
+            <table>
+              <caption>Métodos para conectar WhatsApp con Google Sheets</caption>
+              <thead>
+                <tr><th scope="col">Método</th><th scope="col">Cómo funciona</th><th scope="col">Conviene si…</th><th scope="col">Límites</th><th scope="col">Cómo se cobra</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Exportar el chat a mano</td><td>Desde la app exportás una conversación como archivo de texto y la pegás en la planilla</td><td>Necesitás hacerlo una vez o con muy pocos chats</td><td>Es manual, de a un chat por vez, y el texto queda desordenado</td><td>Sin costo</td></tr>
+                <tr><td>API oficial + herramienta de automatización</td><td>Meta avisa a la herramienta cada vez que entra un mensaje, y la herramienta agrega una fila</td><td>Querés automatizar sin programar desde cero</td><td>Hay que configurar la cuenta de Meta y el número; cada plataforma tiene límites por plan</td><td>Plan de la herramienta de automatización, más las tarifas de Meta <span class="verificar">[VERIFICAR]</span></td></tr>
+                <tr><td>Proveedor oficial con integraciones</td><td>Un proveedor de la API ofrece una bandeja de mensajes para el equipo y, en algunos casos, exportación o integración con planillas</td><td>Varias personas atienden el mismo número</td><td>La integración depende de lo que ofrezca cada proveedor</td><td>Abono del proveedor, más las tarifas de Meta <span class="verificar">[VERIFICAR]</span></td></tr>
+                <tr><td>Integración a medida</td><td>Un programa propio recibe los mensajes de la API y los escribe en la planilla con la API de Google Sheets</td><td>Tenés mucho volumen o reglas propias de tu negocio</td><td>Requiere desarrollo y mantenimiento</td><td>Desarrollo inicial, más el servidor</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Hay un quinto camino que no recomendamos: las extensiones y programas no oficiales que leen WhatsApp Web automatizando el navegador. No son parte de WhatsApp, van contra sus condiciones de uso y pueden terminar con el número de tu negocio bloqueado.</p>
+
+          <h2 id="antes-de-empezar">¿Qué necesitás antes de empezar?</h2>
+          <p>Para el método con la API oficial, que es el que recomendamos para la mayoría de las PyMEs, tené listo esto antes de empezar:</p>
+          <ul class="checklist">
+            <li>Una cuenta de Google con acceso a Google Sheets.</li>
+            <li>Un portfolio comercial de Meta (antes llamado Business Manager) a nombre de tu empresa.</li>
+            <li>Un número de teléfono para usar con la API, que puede ser uno nuevo o el que ya usás, según los requisitos de Meta <span class="verificar">[VERIFICAR: requisitos vigentes para usar un número existente]</span>.</li>
+            <li>Una cuenta en una herramienta de automatización (n8n, Make o Zapier) o en un proveedor oficial de la API.</li>
+            <li>La lista de datos que querés guardar de cada mensaje.</li>
+            <li>Una decisión sobre quién va a tener acceso a la planilla, porque vas a guardar datos personales de tus clientes.</li>
+          </ul>
+
+          <h2 id="paso-a-paso">Paso a paso: conectar WhatsApp Business con Google Sheets con la API oficial</h2>
+          <p>Estos son los pasos para que cada mensaje que llega a tu número se registre solo en una planilla. Los nombres exactos de las pantallas pueden variar, porque Meta y las plataformas de automatización actualizan sus interfaces seguido.</p>
+
+          <h3 id="paso-1">Paso 1: Definí qué datos querés guardar</h3>
+          <p>Antes de tocar cualquier herramienta, escribí qué datos te sirven de cada mensaje. Una lista habitual es: fecha y hora, número de teléfono, nombre del perfil, tipo de mensaje (texto, imagen, audio) y el texto. Podés sumar columnas para uso interno, como "estado" (nueva, respondida, cerrada) o "motivo de la consulta". Empezá con pocas columnas: siempre es más fácil agregar que limpiar.</p>
+
+          <h3 id="paso-2">Paso 2: Prepará la planilla en Google Sheets</h3>
+          <p>Creá una planilla nueva con una pestaña para los mensajes y escribí en la primera fila un encabezado por cada dato. Esa pestaña la va a completar la automatización, así que conviene no editarla a mano. Si querés hacer cálculos o resúmenes, hacelos en otra pestaña que lea esos datos.</p>
+
+          <h3 id="paso-3">Paso 3: Elegí cómo vas a acceder a la API de WhatsApp</h3>
+          <p>Tenés dos caminos. Podés usar la <a href="https://developers.facebook.com/docs/whatsapp/cloud-api" rel="noopener" target="_blank">Cloud API de WhatsApp</a> directamente con Meta: creás una app en Meta for Developers, le agregás el producto WhatsApp y conectás tu número. O podés hacerlo a través de un proveedor oficial, que te guía en la configuración y suele sumar herramientas para el equipo. El primer camino no tiene intermediarios; el segundo te da soporte y una interfaz más simple a cambio de un abono.</p>
+
+          <h3 id="paso-4">Paso 4: Registrá y verificá tu número</h3>
+          <p>Agregá el número de teléfono a tu cuenta de WhatsApp Business en Meta y verificalo con el código que te llega por SMS o por llamada. También vas a configurar el nombre visible del negocio, que Meta revisa antes de aprobarlo. Para algunos límites de uso, Meta puede pedirte que verifiques tu empresa <span class="verificar">[VERIFICAR: requisitos de verificación vigentes]</span>.</p>
+
+          <h3 id="paso-5">Paso 5: Creá el flujo en tu herramienta de automatización</h3>
+          <p>En tu herramienta de automatización, creá un flujo nuevo que empiece con un disparador de mensajes nuevos de WhatsApp. En n8n y en Make existen conectores para la Cloud API de WhatsApp; en Zapier, revisá en su directorio qué conector de WhatsApp está disponible y qué disparadores ofrece <span class="verificar">[VERIFICAR: nombre y disponibilidad del conector en cada plataforma]</span>. Después conectá el disparador con tu cuenta de Meta o de tu proveedor.</p>
+
+          <h3 id="paso-6">Paso 6: Conectá Meta con tu flujo mediante un webhook</h3>
+          <p>Un <strong>webhook</strong> es un aviso automático que una herramienta le manda a otra cuando pasa algo. En este caso, Meta le avisa a tu flujo cada vez que entra un mensaje. En la configuración de WhatsApp de tu app de Meta cargás la dirección de webhook que te da la herramienta de automatización, junto con un token de verificación, y te suscribís a las notificaciones de mensajes. Algunas herramientas hacen este paso solas cuando conectás tu cuenta; en otras lo configurás a mano.</p>
+
+          <h3 id="paso-7">Paso 7: Agregá el paso de Google Sheets</h3>
+          <p>Sumá al flujo una acción de Google Sheets que agregue una fila en la pestaña de mensajes. Después asigná cada dato a su columna: el número, el nombre del perfil, el tipo y el texto del mensaje. La fecha llega como un número que representa el momento exacto del mensaje, así que conviene convertirla a fecha y hora legibles antes de escribirla.</p>
+
+          <h3 id="paso-8">Paso 8: Filtrá las notificaciones que no son mensajes</h3>
+          <p>Meta usa el mismo webhook para avisar otras cosas, como el estado de los mensajes que envía tu negocio (enviado, entregado, leído). Si no filtrás, vas a tener filas vacías o repetidas. Agregá un filtro para que solo los mensajes entrantes creen filas. Además, una misma notificación puede llegar más de una vez: guardá el identificador de cada mensaje y descartá los que ya estén en la planilla.</p>
+
+          <h3 id="paso-9">Paso 9: Probá con mensajes reales y activá el flujo</h3>
+          <p>Mandá mensajes de prueba de distintos tipos: texto, foto, audio y ubicación. Revisá que cada uno cree la fila correcta y que no se dupliquen. Recién entonces activá el flujo, y revisá la planilla los primeros días para detectar errores a tiempo.</p>
+
+          <h2 id="limites">¿Qué límites tiene conectar WhatsApp con Google Sheets?</h2>
+          <p>Esta integración funciona bien para muchas PyMEs, pero tiene límites que conviene conocer antes de depender de ella:</p>
+          <ul>
+            <li><strong>La ventana de 24 horas.</strong> Cuando un cliente te escribe, tenés 24 horas para responderle con mensajes libres. Fuera de esa ventana, solo podés escribirle con plantillas aprobadas por Meta. Esto importa si después querés enviar mensajes desde la planilla.</li>
+            <li><strong>Google Sheets no es una base de datos.</strong> Cada planilla tiene un límite de celdas <span class="verificar">[VERIFICAR: límite vigente de Google Sheets]</span> y se vuelve lenta mucho antes de llegar a él si tiene muchas fórmulas. La API de Google Sheets también tiene límites de uso por minuto <span class="verificar">[VERIFICAR: cuotas vigentes]</span>.</li>
+            <li><strong>Los archivos requieren pasos extra.</strong> Las fotos, los audios y los documentos llegan como un identificador, no como un archivo. Para guardarlos, el flujo tiene que descargarlos y subirlos a otro lugar, como Google Drive.</li>
+            <li><strong>Los planes de automatización tienen topes.</strong> Cada mensaje consume tareas, operaciones o ejecuciones de tu plan. Estimá cuántos mensajes recibís por mes antes de elegir uno.</li>
+            <li><strong>Son datos personales.</strong> Números y mensajes de clientes son datos personales. En Argentina rige la Ley 25.326 de Protección de los Datos Personales, y otros países de la región tienen normas similares. Guardá solo lo necesario, limitá quién accede a la planilla y no la compartas con enlaces abiertos.</li>
+          </ul>
+          <p>Si el volumen crece y la planilla empieza a quedar chica, el paso siguiente es guardar los mensajes en una base de datos y mirar los números en un tablero. Lo explicamos en <a href="/blog/excel-vs-dashboard-a-medida">Excel vs. dashboard a medida: cuándo dar el salto</a>.</p>
+
+          <h2 id="costos">¿Cuánto cuesta conectar WhatsApp con Google Sheets?</h2>
+          <p>El costo depende del método y del volumen de mensajes. No hay un precio único, pero sí componentes que siempre tenés que sumar:</p>
+          <ul>
+            <li><strong>Google Sheets:</strong> se puede usar sin costo con una cuenta de Google; las cuentas de empresa de Google Workspace se pagan por usuario <span class="verificar">[VERIFICAR: planes vigentes]</span>.</li>
+            <li><strong>WhatsApp Business Platform:</strong> Meta cobra principalmente por los mensajes de plantilla que envía tu negocio, con tarifas que dependen del tipo de mensaje y del país <span class="verificar">[VERIFICAR: tarifas vigentes y qué mensajes no tienen costo]</span>. Podés consultarlas en la <a href="https://developers.facebook.com/docs/whatsapp/pricing" rel="noopener" target="_blank">documentación oficial de precios de WhatsApp Business</a>.</li>
+            <li><strong>Proveedor oficial, si usás uno:</strong> un abono mensual o un recargo por mensaje, según el proveedor <span class="verificar">[VERIFICAR]</span>.</li>
+            <li><strong>Herramienta de automatización:</strong> Zapier cobra según la cantidad de tareas, Make según las operaciones o créditos que consumís y n8n, en su versión en la nube, según las ejecuciones; n8n también se puede instalar en un servidor propio, donde pagás el servidor <span class="verificar">[VERIFICAR: planes vigentes de cada plataforma]</span>.</li>
+            <li><strong>Configuración y mantenimiento:</strong> si lo arma un proveedor o un equipo técnico, más los ajustes que haga falta con el tiempo.</li>
+          </ul>
+          <p>Estos costos mensuales se suman a los de otras herramientas del negocio. Si querés verlos en el contexto de un proyecto completo, los repasamos en <a href="/blog/cuanto-cuesta-digitalizar-pyme-latam">cuánto cuesta digitalizar una PyME en LATAM</a>.</p>
+
+          <h2 id="ejemplo">Ejemplo práctico: un instituto de idiomas registra sus consultas</h2>
+          <div class="callout">
+            <span class="callout-title">Ejemplo hipotético</span>
+            <p>Un instituto de idiomas recibe por WhatsApp consultas sobre cursos, horarios y aranceles. Las secretarias responden desde el celular y anotan a los interesados en un cuaderno, así que muchos seguimientos se pierden.</p>
+            <p>Con la API oficial, un proveedor que permite atender desde una bandeja compartida y un flujo de automatización, cada mensaje nuevo crea una fila en una planilla con la fecha, el número, el nombre del perfil y el texto. El equipo suma dos columnas a mano: el curso de interés y el estado de la consulta.</p>
+            <p>A fin de mes, la dirección ve cuántas consultas entraron, cuántas terminaron en inscripción y qué cursos generan más interés, sin contar mensajes uno por uno.</p>
+          </div>
+
+          <h2 id="errores-comunes">Errores comunes al conectar WhatsApp con una planilla</h2>
+          <ul>
+            <li><strong>Usar herramientas no oficiales.</strong> Las que automatizan WhatsApp Web pueden hacer que bloqueen el número de tu negocio.</li>
+            <li><strong>No filtrar las notificaciones de estado.</strong> El resultado son filas vacías o repetidas que nadie entiende.</li>
+            <li><strong>Guardar todo "por las dudas".</strong> Más columnas no es más información; definí qué datos vas a usar.</li>
+            <li><strong>Dejar la planilla abierta.</strong> Un enlace compartido con "cualquier persona" expone datos de tus clientes.</li>
+            <li><strong>No estimar el volumen.</strong> Un plan de automatización que alcanza en una semana tranquila puede quedarse corto en temporada alta.</li>
+            <li><strong>Usar la planilla como sistema central para siempre.</strong> Funciona muy bien para empezar; cuando crece el volumen, conviene evolucionar.</li>
+          </ul>
+
+          <section class="faq" aria-labelledby="preguntas-frecuentes">
+            <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+            <details>
+              <summary>¿Puedo conectar la app gratuita de WhatsApp Business con Google Sheets?</summary>
+              <p>No de forma automática y oficial. La app de WhatsApp Business no ofrece una API para que otros programas lean tus mensajes. Podés exportar chats a mano o usar tu número con la API oficial de WhatsApp, que es la que permite registrar cada mensaje en una planilla de forma automática.</p>
+            </details>
+            <details>
+              <summary>¿Necesito saber programar para conectar WhatsApp con Google Sheets?</summary>
+              <p>No necesariamente. Con herramientas de automatización como n8n, Make o Zapier armás el flujo con pasos visuales. Lo que más trabajo da es configurar la cuenta de Meta y el número. Si preferís no hacerlo, un equipo técnico te lo puede dejar armado y documentado.</p>
+            </details>
+            <details>
+              <summary>¿Cuánto cuesta registrar los mensajes de WhatsApp en Google Sheets?</summary>
+              <p>Depende del método y del volumen. Con la API oficial, Meta cobra principalmente por los mensajes de plantilla que envía tu negocio, según sus tarifas vigentes. A eso se suma el plan de la herramienta de automatización o el servidor, y el abono del proveedor si usás uno. Revisá siempre las páginas oficiales de precios, porque cambian.</p>
+            </details>
+            <details>
+              <summary>¿Puedo guardar también las fotos y los audios que me mandan?</summary>
+              <p>Sí, pero requiere pasos extra. La notificación de un mensaje con foto o audio trae un identificador del archivo, no el archivo. El flujo tiene que descargarlo con ese identificador, guardarlo en algún lugar, como Google Drive, y escribir en la planilla el enlace al archivo.</p>
+            </details>
+            <details>
+              <summary>¿Qué pasa si recibo muchos mensajes por día?</summary>
+              <p>Google Sheets funciona bien con volúmenes moderados, pero se vuelve lento con muchas filas y tiene límites de uso. Además, cada mensaje consume tareas o ejecuciones de tu herramienta de automatización. Si el volumen crece mucho, conviene guardar los mensajes en una base de datos y ver los números en un dashboard.</p>
+            </details>
+          </section>
+
+          <h2 id="conclusion">Conclusión</h2>
+          <p>Conectar WhatsApp Business con Google Sheets es posible y no requiere cambiar de sistema: con la API oficial y una herramienta de automatización, cada mensaje se registra solo en tu planilla. Lo importante es usar métodos oficiales, filtrar lo que no sirve, cuidar los datos de tus clientes y conocer los límites antes de que el volumen crezca.</p>
+          <p>Esta integración es un buen ejemplo del punto medio entre herramientas genéricas y desarrollo a medida que explicamos en <a href="/blog/software-a-medida-vs-crm-generico">software a medida vs. CRM genérico</a>, y de la estrategia de <a href="/blog/integrar-herramientas-pyme">integrar las herramientas que ya usás sin cambiar todo</a>. Si querés que la dejemos armada y documentada para tu negocio, en SISMO TECH hacemos un <a href="/#contacto">diagnóstico gratis de 30 minutos</a> para ver tu caso. También podés conocer nuestros <a href="/#servicios">servicios de automatización</a>.</p>
+
+          <aside class="author-box" aria-label="Sobre el autor">
+            <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+            <p><strong>Equipo de SISMO TECH</strong>Escribimos sobre digitalización, software e IA para PyMEs, con lo que vemos todos los días al trabajar con negocios reales. Publicado el 22 de octubre de 2026 · Actualizado el 22 de octubre de 2026.</p>
+          </aside>
+        </div>
+      </div>
+    </article>
+
+    <section class="related" aria-labelledby="relacionados">
+      <div class="container">
+        <h2 id="relacionados">Artículos relacionados</h2>
+        <div class="post-grid">
+          <article class="post-card" data-cluster="B">
+            <img src="/blog/img/software-a-medida-vs-crm-generico.png" alt="Comparación entre software a medida y un CRM genérico para PyMEs según costo total, tiempos, escalabilidad, dependencia del proveedor e integraciones" width="1200" height="630" loading="lazy" />
+            <div class="post-card-body">
+              <span class="post-tag">Software a medida vs. herramientas genéricas</span>
+              <h3><a href="/blog/software-a-medida-vs-crm-generico">Software a medida vs. CRM genérico: cuál conviene para tu PyME</a></h3>
+              <p>Software a medida vs. CRM genérico: comparamos costo total, tiempos, escalabilidad, dependencia del proveedor e integraciones para que elijas con criterio.</p>
+              <div class="post-meta">
+                <span><time datetime="2026-10-22">22 de octubre de 2026</time></span>
+                <span>15 min de lectura</span>
+              </div>
+            </div>
+          </article>
+          <article class="post-card" data-cluster="B">
+            <img src="/blog/img/excel-vs-dashboard-a-medida.png" alt="Comparación entre una planilla de Excel y un dashboard a medida con los números clave de una PyME" width="1200" height="630" loading="lazy" />
+            <div class="post-card-body">
+              <span class="post-tag">Software a medida vs. herramientas genéricas</span>
+              <h3><a href="/blog/excel-vs-dashboard-a-medida">Excel vs. dashboard a medida: cuándo dar el salto</a></h3>
+              <p>Excel vs. dashboard a medida: señales de que tu planilla ya no alcanza, qué ganás y qué perdés con un dashboard y cómo dar el salto sin perder datos.</p>
+              <div class="post-meta">
+                <span><time datetime="2026-10-22">22 de octubre de 2026</time></span>
+                <span>11 min de lectura</span>
+              </div>
+            </div>
+          </article>
+          <article class="post-card" data-cluster="B">
+            <img src="/blog/img/integrar-herramientas-pyme.png" alt="Esquema de integración de las herramientas de una PyME con APIs, automatizaciones y una fuente única de datos" width="1200" height="630" loading="lazy" />
+            <div class="post-card-body">
+              <span class="post-tag">Software a medida vs. herramientas genéricas</span>
+              <h3><a href="/blog/integrar-herramientas-pyme">Cómo integrar las herramientas que ya usás (sin cambiar todo)</a></h3>
+              <p>Cómo integrar las herramientas de tu PyME con APIs, automatizaciones y una fuente única de datos, sin migrar todo a un sistema nuevo.</p>
+              <div class="post-meta">
+                <span><time datetime="2026-10-22">22 de octubre de 2026</time></span>
+                <span>10 min de lectura</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-wrap" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box">
+          <span class="eyebrow">Diagnóstico gratis</span>
+          <h2 id="cta-title">Contanos de tu negocio y te respondemos en 24 horas.</h2>
+          <p>Sin compromiso. En una charla de 30 minutos vemos qué conviene hacer primero en tu caso.</p>
+          <div class="cta-actions">
+            <a href="https://wa.me/5493435430029?text=Hola%2C%20quiero%20coordinar%20mi%20diagn%C3%B3stico%20gratis" class="button-primary">Agendá tu diagnóstico gratis <span aria-hidden="true">→</span></a>
+            <a href="/#servicios" class="button-secondary">Ver qué hacemos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand" aria-label="SISMO TECH, ir al inicio">
+            <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="brand-name">SISMO <em>TECH</em></span>
+          </a>
+          <p style="margin-top: 1rem; max-width: 28rem;">Tecnología con criterio para negocios reales.</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Navegación</p>
+          <ul class="foot-list">
+            <li><a href="/#sobre">Diagnóstico</a></li>
+            <li><a href="/#servicios">Servicios</a></li>
+            <li><a href="/#proceso">Proceso</a></li>
+            <li><a href="/#faq">Preguntas frecuentes</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <p class="footer-title">Contacto</p>
+          <p>Paraná, Entre Ríos, Argentina</p>
+          <p>La Matanza, Buenos Aires, Argentina</p>
+          <p>Atención virtual para toda Latinoamérica</p>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <span>© 2026 SISMO TECH</span>
+        <span>Más claridad. Menos fricción. Más crecimiento.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="n8n-chat"></div>
+  <script type="module" src="/blog/chat.js"></script>
+</body>
+</html>

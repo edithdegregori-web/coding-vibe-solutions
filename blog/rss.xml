@@ -6,7 +6,39 @@
     <atom:link href="https://www.sismotech.online/blog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Guías prácticas de digitalización, software a medida y automatización con IA para PyMEs de Argentina y Latinoamérica.</description>
     <language>es</language>
-    <lastBuildDate>Tue, 13 Oct 2026 15:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 15:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Software a medida vs. CRM genérico: cuál conviene para tu PyME</title>
+      <link>https://www.sismotech.online/blog/software-a-medida-vs-crm-generico</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/software-a-medida-vs-crm-generico</guid>
+      <pubDate>Thu, 22 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Software a medida vs. herramientas genéricas</category>
+      <description>Software a medida vs. CRM genérico: comparamos costo total, tiempos, escalabilidad, dependencia del proveedor e integraciones para que elijas con criterio.</description>
+    </item>
+    <item>
+      <title>Cómo conectar WhatsApp Business con Google Sheets (paso a paso)</title>
+      <link>https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets</guid>
+      <pubDate>Thu, 22 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Software a medida vs. herramientas genéricas</category>
+      <description>Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno.</description>
+    </item>
+    <item>
+      <title>Excel vs. dashboard a medida: cuándo dar el salto</title>
+      <link>https://www.sismotech.online/blog/excel-vs-dashboard-a-medida</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/excel-vs-dashboard-a-medida</guid>
+      <pubDate>Thu, 22 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Software a medida vs. herramientas genéricas</category>
+      <description>Excel vs. dashboard a medida: señales de que tu planilla ya no alcanza, qué ganás y qué perdés con un dashboard y cómo dar el salto sin perder datos.</description>
+    </item>
+    <item>
+      <title>Cómo integrar las herramientas que ya usás (sin cambiar todo)</title>
+      <link>https://www.sismotech.online/blog/integrar-herramientas-pyme</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/integrar-herramientas-pyme</guid>
+      <pubDate>Thu, 22 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Software a medida vs. herramientas genéricas</category>
+      <description>Cómo integrar las herramientas de tu PyME con APIs, automatizaciones y una fuente única de datos, sin migrar todo a un sistema nuevo.</description>
+    </item>
     <item>
       <title>Cómo digitalizar una PyME en 2026: guía completa por etapas</title>
       <link>https://www.sismotech.online/blog/digitalizar-pyme-2026</link>

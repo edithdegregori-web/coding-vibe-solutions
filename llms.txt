@@ -22,3 +22,10 @@
 - [Auditoría tecnológica para PyMEs: qué es y por qué tu negocio la necesita](https://www.sismotech.online/blog/auditoria-tecnologica-pyme): Qué es una auditoría tecnológica para una PyME, qué se revisa, qué entregable tenés que recibir y cómo prepararte para sacarle el máximo provecho.
 - [7 señales de que tu PyME necesita software a medida](https://www.sismotech.online/blog/senales-necesitas-software-a-medida): ¿Tu PyME necesita software a medida? 7 señales concretas del día a día, qué hacer con cada una y cuándo alcanza con una herramienta del mercado.
 - [Cuánto cuesta digitalizar una PyME en LATAM: precios orientativos 2026](https://www.sismotech.online/blog/cuanto-cuesta-digitalizar-pyme-latam): Cuánto cuesta digitalizar una PyME en LATAM: qué define el precio, rangos orientativos por tipo de proyecto y cómo pedir presupuestos comparables.
+
+### Software a medida vs. herramientas genéricas
+
+- [Software a medida vs. CRM genérico: cuál conviene para tu PyME](https://www.sismotech.online/blog/software-a-medida-vs-crm-generico): Software a medida vs. CRM genérico: comparamos costo total, tiempos, escalabilidad, dependencia del proveedor e integraciones para que elijas con criterio.
+- [Cómo conectar WhatsApp Business con Google Sheets (paso a paso)](https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets): Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno.
+- [Excel vs. dashboard a medida: cuándo dar el salto](https://www.sismotech.online/blog/excel-vs-dashboard-a-medida): Excel vs. dashboard a medida: señales de que tu planilla ya no alcanza, qué ganás y qué perdés con un dashboard y cómo dar el salto sin perder datos.
+- [Cómo integrar las herramientas que ya usás (sin cambiar todo)](https://www.sismotech.online/blog/integrar-herramientas-pyme): Cómo integrar las herramientas de tu PyME con APIs, automatizaciones y una fuente única de datos, sin migrar todo a un sistema nuevo.
