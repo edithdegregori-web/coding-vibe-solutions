@@ -83,7 +83,7 @@
       },
       "articleSection": "Software a medida vs. herramientas genéricas",
       "keywords": "conectar whatsapp con google sheets, whatsapp business api google sheets, guardar mensajes de whatsapp en una planilla, automatizar whatsapp con google sheets, whatsapp con n8n make o zapier",
-      "wordCount": 2665
+      "wordCount": 2602
     },
     {
       "@type": "HowTo",
@@ -341,7 +341,7 @@
           <p>Sí, pero depende de qué WhatsApp usás. No es lo mismo la app de WhatsApp Business que la plataforma para empresas, y solo la segunda permite una conexión automática y oficial.</p>
           <p><strong>WhatsApp Business (la app)</strong> es la aplicación gratuita para celular pensada para negocios chicos. Tiene perfil de empresa, catálogo, respuestas rápidas, etiquetas y mensajes automáticos de bienvenida y de ausencia. Lo que no tiene es una API abierta para que otros programas lean tus mensajes.</p>
           <p><strong>WhatsApp Business Platform (la API)</strong> es la versión de WhatsApp pensada para integrarse con otros sistemas. Se usa a través de la Cloud API de Meta, directamente o mediante un proveedor oficial (en inglés, <em>Business Solution Provider</em>). Es la que permite conectar WhatsApp con Google Sheets de forma automática.</p>
-          <p>Un detalle importante: en general, un número que se usa con la API deja de funcionar en la app común. Meta permite en algunos casos usar el mismo número en la app de WhatsApp Business y en la API al mismo tiempo, una función que llama coexistencia <span class="verificar">[VERIFICAR: disponibilidad en tu país y con tu proveedor]</span>. Consultalo antes de mover tu número principal.</p>
+          <p>Un detalle importante: en general, un número que se usa con la API deja de funcionar en la app común. Meta permite en algunos casos usar el mismo número en la app de WhatsApp Business y en la API al mismo tiempo, una función llamada coexistencia, cuya disponibilidad depende del país y del proveedor. Consultalo antes de mover tu número principal.</p>
 
           <h2 id="metodos">¿Qué métodos existen para conectar WhatsApp con Google Sheets?</h2>
           <p>Hoy existen cuatro métodos oficiales o seguros. Se diferencian en cuánto se automatizan, cuánto trabajo llevan y cómo se cobran.</p>
@@ -353,8 +353,8 @@
               </thead>
               <tbody>
                 <tr><td>Exportar el chat a mano</td><td>Desde la app exportás una conversación como archivo de texto y la pegás en la planilla</td><td>Necesitás hacerlo una vez o con muy pocos chats</td><td>Es manual, de a un chat por vez, y el texto queda desordenado</td><td>Sin costo</td></tr>
-                <tr><td>API oficial + herramienta de automatización</td><td>Meta avisa a la herramienta cada vez que entra un mensaje, y la herramienta agrega una fila</td><td>Querés automatizar sin programar desde cero</td><td>Hay que configurar la cuenta de Meta y el número; cada plataforma tiene límites por plan</td><td>Plan de la herramienta de automatización, más las tarifas de Meta <span class="verificar">[VERIFICAR]</span></td></tr>
-                <tr><td>Proveedor oficial con integraciones</td><td>Un proveedor de la API ofrece una bandeja de mensajes para el equipo y, en algunos casos, exportación o integración con planillas</td><td>Varias personas atienden el mismo número</td><td>La integración depende de lo que ofrezca cada proveedor</td><td>Abono del proveedor, más las tarifas de Meta <span class="verificar">[VERIFICAR]</span></td></tr>
+                <tr><td>API oficial + herramienta de automatización</td><td>Meta avisa a la herramienta cada vez que entra un mensaje, y la herramienta agrega una fila</td><td>Querés automatizar sin programar desde cero</td><td>Hay que configurar la cuenta de Meta y el número; cada plataforma tiene límites por plan</td><td>Plan de la herramienta de automatización, más las tarifas de Meta</td></tr>
+                <tr><td>Proveedor oficial con integraciones</td><td>Un proveedor de la API ofrece una bandeja de mensajes para el equipo y, en algunos casos, exportación o integración con planillas</td><td>Varias personas atienden el mismo número</td><td>La integración depende de lo que ofrezca cada proveedor</td><td>Abono del proveedor, más las tarifas de Meta</td></tr>
                 <tr><td>Integración a medida</td><td>Un programa propio recibe los mensajes de la API y los escribe en la planilla con la API de Google Sheets</td><td>Tenés mucho volumen o reglas propias de tu negocio</td><td>Requiere desarrollo y mantenimiento</td><td>Desarrollo inicial, más el servidor</td></tr>
               </tbody>
             </table>
@@ -366,7 +366,7 @@
           <ul class="checklist">
             <li>Una cuenta de Google con acceso a Google Sheets.</li>
             <li>Un portfolio comercial de Meta (antes llamado Business Manager) a nombre de tu empresa.</li>
-            <li>Un número de teléfono para usar con la API, que puede ser uno nuevo o el que ya usás, según los requisitos de Meta <span class="verificar">[VERIFICAR: requisitos vigentes para usar un número existente]</span>.</li>
+            <li>Un número de teléfono para usar con la API, que puede ser uno nuevo o el que ya usás, según los requisitos de Meta.</li>
             <li>Una cuenta en una herramienta de automatización (n8n, Make o Zapier) o en un proveedor oficial de la API.</li>
             <li>La lista de datos que querés guardar de cada mensaje.</li>
             <li>Una decisión sobre quién va a tener acceso a la planilla, porque vas a guardar datos personales de tus clientes.</li>
@@ -385,10 +385,10 @@
           <p>Tenés dos caminos. Podés usar la <a href="https://developers.facebook.com/docs/whatsapp/cloud-api" rel="noopener" target="_blank">Cloud API de WhatsApp</a> directamente con Meta: creás una app en Meta for Developers, le agregás el producto WhatsApp y conectás tu número. O podés hacerlo a través de un proveedor oficial, que te guía en la configuración y suele sumar herramientas para el equipo. El primer camino no tiene intermediarios; el segundo te da soporte y una interfaz más simple a cambio de un abono.</p>
 
           <h3 id="paso-4">Paso 4: Registrá y verificá tu número</h3>
-          <p>Agregá el número de teléfono a tu cuenta de WhatsApp Business en Meta y verificalo con el código que te llega por SMS o por llamada. También vas a configurar el nombre visible del negocio, que Meta revisa antes de aprobarlo. Para algunos límites de uso, Meta puede pedirte que verifiques tu empresa <span class="verificar">[VERIFICAR: requisitos de verificación vigentes]</span>.</p>
+          <p>Agregá el número de teléfono a tu cuenta de WhatsApp Business en Meta y verificalo con el código que te llega por SMS o por llamada. También vas a configurar el nombre visible del negocio, que Meta revisa antes de aprobarlo. Para algunos límites de uso, Meta puede pedirte que verifiques tu empresa.</p>
 
           <h3 id="paso-5">Paso 5: Creá el flujo en tu herramienta de automatización</h3>
-          <p>En tu herramienta de automatización, creá un flujo nuevo que empiece con un disparador de mensajes nuevos de WhatsApp. En n8n y en Make existen conectores para la Cloud API de WhatsApp; en Zapier, revisá en su directorio qué conector de WhatsApp está disponible y qué disparadores ofrece <span class="verificar">[VERIFICAR: nombre y disponibilidad del conector en cada plataforma]</span>. Después conectá el disparador con tu cuenta de Meta o de tu proveedor.</p>
+          <p>En tu herramienta de automatización, creá un flujo nuevo que empiece con un disparador de mensajes nuevos de WhatsApp. En n8n y en Make existen conectores para la Cloud API de WhatsApp; en Zapier, revisá en su directorio qué conector de WhatsApp está disponible y qué disparadores ofrece. Después conectá el disparador con tu cuenta de Meta o de tu proveedor.</p>
 
           <h3 id="paso-6">Paso 6: Conectá Meta con tu flujo mediante un webhook</h3>
           <p>Un <strong>webhook</strong> es un aviso automático que una herramienta le manda a otra cuando pasa algo. En este caso, Meta le avisa a tu flujo cada vez que entra un mensaje. En la configuración de WhatsApp de tu app de Meta cargás la dirección de webhook que te da la herramienta de automatización, junto con un token de verificación, y te suscribís a las notificaciones de mensajes. Algunas herramientas hacen este paso solas cuando conectás tu cuenta; en otras lo configurás a mano.</p>
@@ -406,7 +406,7 @@
           <p>Esta integración funciona bien para muchas PyMEs, pero tiene límites que conviene conocer antes de depender de ella:</p>
           <ul>
             <li><strong>La ventana de 24 horas.</strong> Cuando un cliente te escribe, tenés 24 horas para responderle con mensajes libres. Fuera de esa ventana, solo podés escribirle con plantillas aprobadas por Meta. Esto importa si después querés enviar mensajes desde la planilla.</li>
-            <li><strong>Google Sheets no es una base de datos.</strong> Cada planilla tiene un límite de celdas <span class="verificar">[VERIFICAR: límite vigente de Google Sheets]</span> y se vuelve lenta mucho antes de llegar a él si tiene muchas fórmulas. La API de Google Sheets también tiene límites de uso por minuto <span class="verificar">[VERIFICAR: cuotas vigentes]</span>.</li>
+            <li><strong>Google Sheets no es una base de datos.</strong> Cada planilla tiene un límite de celdas y se vuelve lenta mucho antes de llegar a él si tiene muchas fórmulas. La API de Google Sheets también tiene límites de uso por minuto.</li>
             <li><strong>Los archivos requieren pasos extra.</strong> Las fotos, los audios y los documentos llegan como un identificador, no como un archivo. Para guardarlos, el flujo tiene que descargarlos y subirlos a otro lugar, como Google Drive.</li>
             <li><strong>Los planes de automatización tienen topes.</strong> Cada mensaje consume tareas, operaciones o ejecuciones de tu plan. Estimá cuántos mensajes recibís por mes antes de elegir uno.</li>
             <li><strong>Son datos personales.</strong> Números y mensajes de clientes son datos personales. En Argentina rige la Ley 25.326 de Protección de los Datos Personales, y otros países de la región tienen normas similares. Guardá solo lo necesario, limitá quién accede a la planilla y no la compartas con enlaces abiertos.</li>
@@ -416,10 +416,10 @@
           <h2 id="costos">¿Cuánto cuesta conectar WhatsApp con Google Sheets?</h2>
           <p>El costo depende del método y del volumen de mensajes. No hay un precio único, pero sí componentes que siempre tenés que sumar:</p>
           <ul>
-            <li><strong>Google Sheets:</strong> se puede usar sin costo con una cuenta de Google; las cuentas de empresa de Google Workspace se pagan por usuario <span class="verificar">[VERIFICAR: planes vigentes]</span>.</li>
-            <li><strong>WhatsApp Business Platform:</strong> Meta cobra principalmente por los mensajes de plantilla que envía tu negocio, con tarifas que dependen del tipo de mensaje y del país <span class="verificar">[VERIFICAR: tarifas vigentes y qué mensajes no tienen costo]</span>. Podés consultarlas en la <a href="https://developers.facebook.com/docs/whatsapp/pricing" rel="noopener" target="_blank">documentación oficial de precios de WhatsApp Business</a>.</li>
-            <li><strong>Proveedor oficial, si usás uno:</strong> un abono mensual o un recargo por mensaje, según el proveedor <span class="verificar">[VERIFICAR]</span>.</li>
-            <li><strong>Herramienta de automatización:</strong> Zapier cobra según la cantidad de tareas, Make según las operaciones o créditos que consumís y n8n, en su versión en la nube, según las ejecuciones; n8n también se puede instalar en un servidor propio, donde pagás el servidor <span class="verificar">[VERIFICAR: planes vigentes de cada plataforma]</span>.</li>
+            <li><strong>Google Sheets:</strong> se puede usar sin costo con una cuenta de Google; las cuentas de empresa de Google Workspace se pagan por usuario.</li>
+            <li><strong>WhatsApp Business Platform:</strong> Meta cobra principalmente por los mensajes de plantilla que envía tu negocio, con tarifas que dependen del tipo de mensaje y del país. Podés consultarlas en la <a href="https://developers.facebook.com/docs/whatsapp/pricing" rel="noopener" target="_blank">documentación oficial de precios de WhatsApp Business</a>.</li>
+            <li><strong>Proveedor oficial, si usás uno:</strong> un abono mensual o un recargo por mensaje, según el proveedor.</li>
+            <li><strong>Herramienta de automatización:</strong> Zapier cobra según la cantidad de tareas, Make según las operaciones o créditos que consumís y n8n, en su versión en la nube, según las ejecuciones; n8n también se puede instalar en un servidor propio, donde pagás el servidor.</li>
             <li><strong>Configuración y mantenimiento:</strong> si lo arma un proveedor o un equipo técnico, más los ajustes que haga falta con el tiempo.</li>
           </ul>
           <p>Estos costos mensuales se suman a los de otras herramientas del negocio. Si querés verlos en el contexto de un proyecto completo, los repasamos en <a href="/blog/cuanto-cuesta-digitalizar-pyme-latam">cuánto cuesta digitalizar una PyME en LATAM</a>.</p>
@@ -503,7 +503,7 @@
               <p>Excel vs. dashboard a medida: señales de que tu planilla ya no alcanza, qué ganás y qué perdés con un dashboard y cómo dar el salto sin perder datos.</p>
               <div class="post-meta">
                 <span><time datetime="2026-10-22">22 de octubre de 2026</time></span>
-                <span>11 min de lectura</span>
+                <span>10 min de lectura</span>
               </div>
             </div>
           </article>
