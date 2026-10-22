@@ -6,7 +6,39 @@
     <atom:link href="https://www.sismotech.online/blog/rss.xml" rel="self" type="application/rss+xml" />
     <description>Guías prácticas de digitalización, software a medida y automatización con IA para PyMEs de Argentina y Latinoamérica.</description>
     <language>es</language>
-    <lastBuildDate>Thu, 22 Oct 2026 15:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 16:00:00 GMT</lastBuildDate>
+    <item>
+      <title>IA para PyMEs: guía práctica 2026 (sin humo)</title>
+      <link>https://www.sismotech.online/blog/ia-para-pymes-guia-practica-2026</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/ia-para-pymes-guia-practica-2026</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 GMT</pubDate>
+      <category>IA aplicada sin humo</category>
+      <description>Guía práctica de IA para PyMEs en 2026: qué sí y qué no puede hacer, casos de uso en ventas, atención y administración, cómo empezar y qué riesgos cuidar.</description>
+    </item>
+    <item>
+      <title>Cómo automatizar la atención por WhatsApp con IA (sin perder el trato humano)</title>
+      <link>https://www.sismotech.online/blog/automatizar-whatsapp-con-ia</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/automatizar-whatsapp-con-ia</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 GMT</pubDate>
+      <category>IA aplicada sin humo</category>
+      <description>Cómo automatizar la atención por WhatsApp con IA sin perder el trato humano: flujo bot + persona, qué automatizar y qué no, y cuidados de privacidad.</description>
+    </item>
+    <item>
+      <title>5 automatizaciones con IA que pueden ahorrarte más de 10 horas por semana</title>
+      <link>https://www.sismotech.online/blog/automatizaciones-ia-ahorran-10-horas</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/automatizaciones-ia-ahorran-10-horas</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 GMT</pubDate>
+      <category>IA aplicada sin humo</category>
+      <description>5 automatizaciones con IA realistas para PyMEs: qué hace cada una, cuánto tiempo puede ahorrar, de qué depende y cómo calcular el ahorro en tu negocio.</description>
+    </item>
+    <item>
+      <title>Chatbot vs. asistente IA: qué necesita tu negocio</title>
+      <link>https://www.sismotech.online/blog/chatbot-vs-asistente-ia</link>
+      <guid isPermaLink="true">https://www.sismotech.online/blog/chatbot-vs-asistente-ia</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 GMT</pubDate>
+      <category>IA aplicada sin humo</category>
+      <description>Chatbot vs. asistente IA: diferencias entre reglas y modelos de lenguaje, tabla de decisión, costos orientativos y cuándo conviene cada opción para tu PyME.</description>
+    </item>
     <item>
       <title>Software a medida vs. CRM genérico: cuál conviene para tu PyME</title>
       <link>https://www.sismotech.online/blog/software-a-medida-vs-crm-generico</link>

@@ -29,3 +29,10 @@
 - [Cómo conectar WhatsApp Business con Google Sheets (paso a paso)](https://www.sismotech.online/blog/conectar-whatsapp-business-google-sheets): Cómo conectar WhatsApp con Google Sheets paso a paso: qué métodos existen hoy, cuál conviene, qué límites tienen y cómo se cobra cada uno.
 - [Excel vs. dashboard a medida: cuándo dar el salto](https://www.sismotech.online/blog/excel-vs-dashboard-a-medida): Excel vs. dashboard a medida: señales de que tu planilla ya no alcanza, qué ganás y qué perdés con un dashboard y cómo dar el salto sin perder datos.
 - [Cómo integrar las herramientas que ya usás (sin cambiar todo)](https://www.sismotech.online/blog/integrar-herramientas-pyme): Cómo integrar las herramientas de tu PyME con APIs, automatizaciones y una fuente única de datos, sin migrar todo a un sistema nuevo.
+
+### IA aplicada sin humo
+
+- [IA para PyMEs: guía práctica 2026 (sin humo)](https://www.sismotech.online/blog/ia-para-pymes-guia-practica-2026): Guía práctica de IA para PyMEs en 2026: qué sí y qué no puede hacer, casos de uso en ventas, atención y administración, cómo empezar y qué riesgos cuidar.
+- [Cómo automatizar la atención por WhatsApp con IA (sin perder el trato humano)](https://www.sismotech.online/blog/automatizar-whatsapp-con-ia): Cómo automatizar la atención por WhatsApp con IA sin perder el trato humano: flujo bot + persona, qué automatizar y qué no, y cuidados de privacidad.
+- [5 automatizaciones con IA que pueden ahorrarte más de 10 horas por semana](https://www.sismotech.online/blog/automatizaciones-ia-ahorran-10-horas): 5 automatizaciones con IA realistas para PyMEs: qué hace cada una, cuánto tiempo puede ahorrar, de qué depende y cómo calcular el ahorro en tu negocio.
+- [Chatbot vs. asistente IA: qué necesita tu negocio](https://www.sismotech.online/blog/chatbot-vs-asistente-ia): Chatbot vs. asistente IA: diferencias entre reglas y modelos de lenguaje, tabla de decisión, costos orientativos y cuándo conviene cada opción para tu PyME.
